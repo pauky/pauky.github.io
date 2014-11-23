@@ -3,45 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>openblog | OpenBlog</title>
+  <title>js-arguments | OpenBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这是新的开始，我用hexo创建了第一篇文章。
-通过下面的命令，就可以创建新文章
-12D:\workspace\javascript\nodejs-hexo&gt;hexo new 新的开始[info] File created at D:\workspace\javascript\nodejs-hexo\source\_posts\新的开始.md
-
-百度
-
-引用
-
-
-Every interacti">
+  <meta name="description" content="修改arguments的值会改变相应函数参数的值，虽然两者的内存空间不同，但值是同步的。
+123456789101112(function () {	function test1(x, y) {		arguments[0] = 10;		console.log(x + y);	}	function test2(x, y) {		x = 10;		console.log(arguments[0]);">
 <meta property="og:type" content="article">
-<meta property="og:title" content="openblog">
-<meta property="og:url" content="http://glowrypauky.xyz/2014/05/07/openblog/">
+<meta property="og:title" content="js-arguments">
+<meta property="og:url" content="http://glowrypauky.xyz/2014/11/23/js-arguments/">
 <meta property="og:site_name" content="OpenBlog">
-<meta property="og:description" content="这是新的开始，我用hexo创建了第一篇文章。
-通过下面的命令，就可以创建新文章
-12D:\workspace\javascript\nodejs-hexo&gt;hexo new 新的开始[info] File created at D:\workspace\javascript\nodejs-hexo\source\_posts\新的开始.md
-
-百度
-
-引用
-
-
-Every interacti">
-<meta property="og:image" content="/images/woyaotougao.jpg">
+<meta property="og:description" content="修改arguments的值会改变相应函数参数的值，虽然两者的内存空间不同，但值是同步的。
+123456789101112(function () {	function test1(x, y) {		arguments[0] = 10;		console.log(x + y);	}	function test2(x, y) {		x = 10;		console.log(arguments[0]);">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="openblog">
-<meta name="twitter:description" content="这是新的开始，我用hexo创建了第一篇文章。
-通过下面的命令，就可以创建新文章
-12D:\workspace\javascript\nodejs-hexo&gt;hexo new 新的开始[info] File created at D:\workspace\javascript\nodejs-hexo\source\_posts\新的开始.md
-
-百度
-
-引用
-
-
-Every interacti">
+<meta name="twitter:title" content="js-arguments">
+<meta name="twitter:description" content="修改arguments的值会改变相应函数参数的值，虽然两者的内存空间不同，但值是同步的。
+123456789101112(function () {	function test1(x, y) {		arguments[0] = 10;		console.log(x + y);	}	function test2(x, y) {		x = 10;		console.log(arguments[0]);">
 
   
     <link rel="alternative" href="/atom.xml" title="OpenBlog" type="application/atom+xml">
@@ -93,14 +68,14 @@ Every interacti">
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-openblog" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-js-arguments" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2014/05/07/openblog/" class="article-date">
-  <time datetime="2014-05-07T10:44:12.000Z" itemprop="datePublished">5月 7 2014</time>
+    <a href="/2014/11/23/js-arguments/" class="article-date">
+  <time datetime="2014-11-23T15:22:36.000Z" itemprop="datePublished">11月 23 2014</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/日志/">日志</a>
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
   </div>
 
   </div>
@@ -111,7 +86,7 @@ Every interacti">
         
   
     <h1 class="article-title" itemprop="name">
-      openblog
+      js-arguments
     </h1>
   
 
@@ -119,25 +94,17 @@ Every interacti">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>这是<strong>新的开始</strong>，我用hexo创建了第一篇文章。</p>
-<p>通过下面的命令，就可以创建新文章</p>
-<figure class="highlight {bash}"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">D:<span class="command">\workspace</span><span class="command">\javascript</span><span class="command">\nodejs</span>-hexo&gt;hexo new 新的开始</div><div class="line"><span class="special">[</span>info<span class="special">]</span> File created at D:<span class="command">\workspace</span><span class="command">\javascript</span><span class="command">\nodejs</span>-hexo<span class="command">\source</span><span class="command">\_</span>posts<span class="command">\新</span>的开始.md</div></pre></td></tr></table></figure>
+        <h3 id="修改arguments的值会改变相应函数参数的值，虽然两者的内存空间不同，但值是同步的。">修改arguments的值会改变相应函数参数的值，虽然两者的内存空间不同，但值是同步的。</h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">test1</span><span class="params">(x, y)</span> </span>{</div><div class="line">		<span class="built_in">arguments</span>[<span class="number">0</span>] = <span class="number">10</span>;</div><div class="line">		<span class="built_in">console</span>.log(x + y);</div><div class="line">	}</div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">test2</span><span class="params">(x, y)</span> </span>{</div><div class="line">		x = <span class="number">10</span>;</div><div class="line">		<span class="built_in">console</span>.log(<span class="built_in">arguments</span>[<span class="number">0</span>]);</div><div class="line">	}</div><div class="line">	test1(<span class="number">1</span>, <span class="number">1</span>); <span class="comment">//11</span></div><div class="line">	test2(<span class="number">1</span>, <span class="number">1</span>); <span class="comment">//10</span></div><div class="line">})();</div></pre></td></tr></table></figure>
 
-<p><a href="http://www.baidu.com" target="_blank" rel="external">百度</a></p>
-<p><img src="/images/woyaotougao.jpg" alt="first img"></p>
-<h2 id="引用">引用</h2>
-<blockquote>
-
-<p>Every interaction is both precious and an opportunity to delight.</p>
-<footer><strong>Seth Godin</strong><cite><a href="http://sethgodin.typepad.com/seths_blog/2009/07/welcome-to-island-marketing.html" target="_blank" rel="external">Welcome to Island Marketing</a></cite></footer></blockquote>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://glowrypauky.xyz/2014/05/07/openblog/" data-id="h9jicbn90gqyb5b5" class="article-share-link">Share</a>
+      <a data-url="http://glowrypauky.xyz/2014/11/23/js-arguments/" data-id="p7muw5i3bflgj2sd" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开始/">开始</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/我/">我</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日记/">日记</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/agruments/">agruments</a></li></ul>
 
     </footer>
   </div>
@@ -145,15 +112,20 @@ Every interacti">
     
 <nav id="article-nav">
   
-    <a href="/2014/11/22/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2014/11/23/js-array-valueOf/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          Hello World
+          js-array-valueOf
         
       </div>
     </a>
   
+  
+    <a href="/2014/11/23/js-array-length/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">js-array-length</div>
+    </a>
   
 </nav>
 
