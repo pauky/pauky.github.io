@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: node.js | OpenBlog</title>
+  <title>js-array-sort | OpenBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="开源blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="OpenBlog">
-<meta property="og:url" content="http://glowrypauky.xyz/tags/node-js/">
+  <meta name="description" content="123456789101112131415161718192021222324252627282930(function () {	//sort不传入参数时，对每个元素先toString()后再对其字符串作比较，所以10会在5前面	var arr = [1, 5, 10];	arr.sort();	console.log(arr); //[1, 10, 5]})();(function () {">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js-array-sort">
+<meta property="og:url" content="http://glowrypauky.xyz/2014/11/24/js-array-sort/">
 <meta property="og:site_name" content="OpenBlog">
-<meta property="og:description" content="开源blog">
+<meta property="og:description" content="123456789101112131415161718192021222324252627282930(function () {	//sort不传入参数时，对每个元素先toString()后再对其字符串作比较，所以10会在5前面	var arr = [1, 5, 10];	arr.sort();	console.log(arr); //[1, 10, 5]})();(function () {">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="OpenBlog">
-<meta name="twitter:description" content="开源blog">
+<meta name="twitter:title" content="js-array-sort">
+<meta name="twitter:description" content="123456789101112131415161718192021222324252627282930(function () {	//sort不传入参数时，对每个元素先toString()后再对其字符串作比较，所以10会在5前面	var arr = [1, 5, 10];	arr.sort();	console.log(arr); //[1, 10, 5]})();(function () {">
 
   
     <link rel="alternative" href="/atom.xml" title="OpenBlog" type="application/atom+xml">
@@ -65,16 +65,14 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-second" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-js-array-sort" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2014/11/22/second/" class="article-date">
-  <time datetime="2014-11-22T14:37:46.000Z" itemprop="datePublished">11月 22 2014</time>
+    <a href="/2014/11/24/js-array-sort/" class="article-date">
+  <time datetime="2014-11-24T01:31:16.000Z" itemprop="datePublished">11月 24 2014</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/测试/">测试</a>
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
   </div>
 
   </div>
@@ -84,8 +82,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/11/22/second/">second</a>
+    <h1 class="article-title" itemprop="name">
+      js-array-sort
     </h1>
   
 
@@ -93,25 +91,34 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'Hello World!'</span>);</div><div class="line">})();</div></pre></td></tr></table></figure>
+        <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">	<span class="comment">//sort不传入参数时，对每个元素先toString()后再对其字符串作比较，所以10会在5前面</span></div><div class="line">	<span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">5</span>, <span class="number">10</span>];</div><div class="line">	arr.sort();</div><div class="line">	<span class="built_in">console</span>.log(arr); <span class="comment">//[1, 10, 5]</span></div><div class="line">})();</div><div class="line"></div><div class="line">(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">	<span class="comment">//简易版</span></div><div class="line">	<span class="keyword">var</span> arr = [<span class="number">2</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">3</span>];</div><div class="line">	arr.sort(<span class="function"><span class="keyword">function</span> <span class="params">(val1,val2)</span> </span>{</div><div class="line">		<span class="keyword">if</span> (val1 &lt; val2) {</div><div class="line">			<span class="keyword">return</span> -<span class="number">1</span>; <span class="comment">//如果第一个参数（val1）应该排在第二个参数(val2)前面，则返回负数</span></div><div class="line">		} <span class="keyword">else</span> <span class="keyword">if</span> (val1 &gt; val2) {</div><div class="line">			<span class="keyword">return</span> <span class="number">2</span>; <span class="comment">//如果第一个参数（val1）应该排在第二个参数(val2)后面，则返回正数</span></div><div class="line">		} <span class="keyword">else</span> {</div><div class="line">			<span class="keyword">return</span> <span class="number">0</span>; <span class="comment">//两数相等，返回0</span></div><div class="line">		}</div><div class="line">	});</div><div class="line">	<span class="built_in">console</span>.log(arr); <span class="comment">//[1, 2, 3, 4, 5]</span></div><div class="line">})();</div><div class="line"></div><div class="line">(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">	<span class="comment">//精简版</span></div><div class="line">	<span class="keyword">var</span> arr = [<span class="number">2</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">3</span>];</div><div class="line">	arr.sort(<span class="function"><span class="keyword">function</span> <span class="params">(val1,val2)</span> </span>{</div><div class="line">		<span class="keyword">return</span> val1 - val2;</div><div class="line">	});</div><div class="line">	<span class="built_in">console</span>.log(arr); <span class="comment">//[1, 2, 3, 4, 5]</span></div><div class="line">})();</div></pre></td></tr></table></figure>
 
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://glowrypauky.xyz/2014/11/22/second/" data-id="8bv7h1b293iiz0oi" class="article-share-link">Share</a>
+      <a data-url="http://glowrypauky.xyz/2014/11/24/js-array-sort/" data-id="uy9t7csxl4z499ot" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/array/">array</a></li></ul>
 
     </footer>
   </div>
   
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2014/11/23/js-array-valueOf/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">js-array-valueOf</div>
+    </a>
+  
+</nav>
+
+  
 </article>
 
-
-  
-  
 </section>
         
           <aside id="sidebar">
