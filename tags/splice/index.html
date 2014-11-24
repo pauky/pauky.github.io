@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: Array | OpenBlog</title>
+  <title>Tag: splice | OpenBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="开源blog">
 <meta property="og:type" content="website">
 <meta property="og:title" content="OpenBlog">
-<meta property="og:url" content="http://glowrypauky.xyz/tags/Array/">
+<meta property="og:url" content="http://glowrypauky.xyz/tags/splice/">
 <meta property="og:site_name" content="OpenBlog">
 <meta property="og:description" content="开源blog">
 <meta name="twitter:card" content="summary">
@@ -104,141 +104,6 @@
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Array/">Array</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/splice/">splice</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-js-array-sort" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/11/24/js-array-sort/" class="article-date">
-  <time datetime="2014-11-24T01:31:16.000Z" itemprop="datePublished">11月 24 2014</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/11/24/js-array-sort/">js-array-sort</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">	<span class="comment">//sort不传入参数时，对每个元素先toString()后再对其字符串作比较，所以10会在5前面</span></div><div class="line">	<span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">5</span>, <span class="number">10</span>];</div><div class="line">	arr.sort();</div><div class="line">	<span class="built_in">console</span>.log(arr); <span class="comment">//[1, 10, 5]</span></div><div class="line">})();</div><div class="line"></div><div class="line">(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">	<span class="comment">//简易版</span></div><div class="line">	<span class="keyword">var</span> arr = [<span class="number">2</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">3</span>];</div><div class="line">	arr.sort(<span class="function"><span class="keyword">function</span> <span class="params">(val1,val2)</span> </span>{</div><div class="line">		<span class="keyword">if</span> (val1 &lt; val2) {</div><div class="line">			<span class="keyword">return</span> -<span class="number">1</span>; <span class="comment">//如果第一个参数（val1）应该排在第二个参数(val2)前面，则返回负数</span></div><div class="line">		} <span class="keyword">else</span> <span class="keyword">if</span> (val1 &gt; val2) {</div><div class="line">			<span class="keyword">return</span> <span class="number">2</span>; <span class="comment">//如果第一个参数（val1）应该排在第二个参数(val2)后面，则返回正数</span></div><div class="line">		} <span class="keyword">else</span> {</div><div class="line">			<span class="keyword">return</span> <span class="number">0</span>; <span class="comment">//两数相等，返回0</span></div><div class="line">		}</div><div class="line">	});</div><div class="line">	<span class="built_in">console</span>.log(arr); <span class="comment">//[1, 2, 3, 4, 5]</span></div><div class="line">})();</div><div class="line"></div><div class="line">(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">	<span class="comment">//精简版</span></div><div class="line">	<span class="keyword">var</span> arr = [<span class="number">2</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">3</span>];</div><div class="line">	arr.sort(<span class="function"><span class="keyword">function</span> <span class="params">(val1,val2)</span> </span>{</div><div class="line">		<span class="keyword">return</span> val1 - val2;</div><div class="line">	});</div><div class="line">	<span class="built_in">console</span>.log(arr); <span class="comment">//[1, 2, 3, 4, 5]</span></div><div class="line">})();</div></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://glowrypauky.xyz/2014/11/24/js-array-sort/" data-id="uy9t7csxl4z499ot" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Array/">Array</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-js-array-valueOf" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/11/23/js-array-valueOf/" class="article-date">
-  <time datetime="2014-11-23T15:57:25.000Z" itemprop="datePublished">11月 23 2014</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/11/23/js-array-valueOf/">js-array-valueOf</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">	<span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="literal">null</span>, <span class="number">5</span>,,<span class="number">6</span>];</div><div class="line">	<span class="comment">//null,undefined的toString(),toLocaleString()都转换成空字符串</span></div><div class="line">	<span class="built_in">console</span>.log(arr.toString()); <span class="comment">//1,2,3,,5,,6</span></div><div class="line">	<span class="built_in">console</span>.log(arr.toLocaleString()); <span class="comment">//1,2,3,,5,,6</span></div><div class="line">	<span class="built_in">console</span>.log(arr.valueOf()[<span class="number">5</span>]); <span class="comment">//undefined</span></div><div class="line">	<span class="built_in">console</span>.log(arr.valueOf() <span class="keyword">instanceof</span> <span class="built_in">Array</span>); <span class="comment">//true</span></div><div class="line">	<span class="built_in">console</span>.log(arr.join(<span class="string">'|'</span>)); <span class="comment">//1|2|3||5||6</span></div><div class="line">	</div><div class="line">	<span class="built_in">console</span>.log(arr.valueOf()); <span class="comment">//[1, 2, 3, null, 5, 6: 6] -chrome [1, 2, 3, null, 5, , 6] -firefox</span></div><div class="line">})();</div></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://glowrypauky.xyz/2014/11/23/js-array-valueOf/" data-id="vd1tlpiiuka9hnqk" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Array/">Array</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-js-array-length" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/11/23/js-array-length/" class="article-date">
-  <time datetime="2014-11-23T02:45:54.000Z" itemprop="datePublished">11月 23 2014</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/11/23/js-array-length/">js-array-length</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="JavaScript_Array_Length特性">JavaScript Array Length特性</h2>
-<h3 id="可以通过设置array的length值来修改array，如：">可以通过设置array的length值来修改array，如：</h3>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="string">'one'</span>, <span class="string">'two'</span>, <span class="string">'three'</span>];</div><div class="line"><span class="built_in">console</span>.log(arr[<span class="number">2</span>]); <span class="comment">//three</span></div><div class="line">arr.length = <span class="number">2</span>;</div><div class="line"><span class="built_in">console</span>.log(arr[<span class="number">2</span>]); <span class="comment">//undefined</span></div><div class="line">arr.length = <span class="number">5</span>;</div><div class="line"><span class="built_in">console</span>.log(arr.length); <span class="comment">//5</span></div></pre></td></tr></table></figure>
-
-<p>减少length值，会从array的末尾移除相应个数的元素；<br>增加length值，会从array的末尾增加相应个数的元素。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://glowrypauky.xyz/2014/11/23/js-array-length/" data-id="f5uzzf379ji7xrzz" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Array/">Array</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
 
     </footer>
   </div>
