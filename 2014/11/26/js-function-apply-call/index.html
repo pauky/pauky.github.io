@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: function | OpenBlog</title>
+  <title>js-function-apply_call | OpenBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="开源blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="OpenBlog">
-<meta property="og:url" content="http://glowrypauky.xyz/tags/function/">
+  <meta name="description" content="12345678910111213(function () {    // call和apply是每个函数的非继承的方法    var o = {color: 'red'};    window.color = 'blue';    function showColor(a, b) {        console.log(this.color + a + b);    }    showColo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js-function-apply_call">
+<meta property="og:url" content="http://glowrypauky.xyz/2014/11/26/js-function-apply-call/">
 <meta property="og:site_name" content="OpenBlog">
-<meta property="og:description" content="开源blog">
+<meta property="og:description" content="12345678910111213(function () {    // call和apply是每个函数的非继承的方法    var o = {color: 'red'};    window.color = 'blue';    function showColor(a, b) {        console.log(this.color + a + b);    }    showColo">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="OpenBlog">
-<meta name="twitter:description" content="开源blog">
+<meta name="twitter:title" content="js-function-apply_call">
+<meta name="twitter:description" content="12345678910111213(function () {    // call和apply是每个函数的非继承的方法    var o = {color: 'red'};    window.color = 'blue';    function showColor(a, b) {        console.log(this.color + a + b);    }    showColo">
 
   
     <link rel="alternative" href="/atom.xml" title="OpenBlog" type="application/atom+xml">
@@ -65,9 +65,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-js-function-apply-call" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-js-function-apply-call" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/11/26/js-function-apply-call/" class="article-date">
   <time datetime="2014-11-26T07:12:53.000Z" itemprop="datePublished">11月 26 2014</time>
@@ -84,8 +82,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/11/26/js-function-apply-call/">js-function-apply_call</a>
+    <h1 class="article-title" itemprop="name">
+      js-function-apply_call
     </h1>
   
 
@@ -107,55 +105,20 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-js-arguments-caller" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/11/26/js-arguments-caller/" class="article-date">
-  <time datetime="2014-11-26T06:03:51.000Z" itemprop="datePublished">11月 26 2014</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/11/26/js-arguments-caller/">js-function-caller</a>
-    </h1>
+    <a href="/2014/11/26/js-arguments-caller/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">js-function-caller</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">    <span class="comment">// 函数的caller属性指向调用该函数的引用</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">outer</span><span class="params">()</span> </span>{</div><div class="line">        inner();</div><div class="line">    }</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">inner</span><span class="params">()</span> </span>{</div><div class="line">        <span class="built_in">console</span>.log(<span class="built_in">arguments</span>.callee.caller);</div><div class="line">    }</div><div class="line">    outer();</div><div class="line">    <span class="comment">/*function outer() {</span></div><div class="line">        inner();</div><div class="line">    }*/</div><div class="line">    <span class="comment">// 全局作用域下被的函数返回null</span></div><div class="line">    <span class="built_in">console</span>.log(outer.caller); <span class="comment">// null</span></div><div class="line">})();</div></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://glowrypauky.xyz/2014/11/26/js-arguments-caller/" data-id="4yk1cjdbl38xujzl" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/function/">function</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
 
-
-  
-  
 </section>
         
           <aside id="sidebar">

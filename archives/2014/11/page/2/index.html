@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: function | OpenBlog</title>
+  <title>Archives: 2014/11 | OpenBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="开源blog">
 <meta property="og:type" content="website">
 <meta property="og:title" content="OpenBlog">
-<meta property="og:url" content="http://glowrypauky.xyz/tags/function/">
+<meta property="og:url" content="http://glowrypauky.xyz/archives/2014/11/page/2/">
 <meta property="og:site_name" content="OpenBlog">
 <meta property="og:description" content="开源blog">
 <meta name="twitter:card" content="summary">
@@ -67,16 +67,12 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-js-function-apply-call" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2014/11/26/js-function-apply-call/" class="article-date">
-  <time datetime="2014-11-26T07:12:53.000Z" itemprop="datePublished">11月 26 2014</time>
+    <a href="/2014/11/22/hello-world/" class="article-date">
+  <time datetime="2014-11-22T03:07:26.000Z" itemprop="datePublished">11月 22 2014</time>
 </a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
-  </div>
-
   </div>
   <div class="article-inner">
     
@@ -85,7 +81,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2014/11/26/js-function-apply-call/">js-function-apply_call</a>
+      <a class="article-title" href="/2014/11/22/hello-world/">Hello World</a>
     </h1>
   
 
@@ -93,17 +89,31 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">    <span class="comment">// call和apply是每个函数的非继承的方法</span></div><div class="line">    <span class="keyword">var</span> o = {color: <span class="string">'red'</span>};</div><div class="line">    <span class="built_in">window</span>.color = <span class="string">'blue'</span>;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">showColor</span><span class="params">(a, b)</span> </span>{</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.color + a + b);</div><div class="line">    }</div><div class="line">    showColor.call(<span class="keyword">this</span>, <span class="string">'1'</span>, <span class="string">'2'</span>); <span class="comment">// blue12</span></div><div class="line">    showColor.call(<span class="built_in">window</span>, <span class="string">'1'</span>, <span class="string">'2'</span>); <span class="comment">// blue12</span></div><div class="line">    showColor.call(o, <span class="string">'1'</span>, <span class="string">'2'</span>); <span class="comment">// red12</span></div><div class="line">    showColor.apply(<span class="keyword">this</span>, [<span class="number">3</span>, <span class="number">4</span>]); <span class="comment">// blue34</span></div><div class="line">    showColor.apply(o, [<span class="number">3</span>, <span class="number">4</span>]); <span class="comment">// red34</span></div><div class="line">})();</div></pre></td></tr></table></figure>
+        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">trobuleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick_Start">Quick Start</h2>
+<h3 id="Create_a_new_post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
 
+<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run_server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+
+<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate_static_files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+
+<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+
+<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://glowrypauky.xyz/2014/11/26/js-function-apply-call/" data-id="8qokmo8nhgad3258" class="article-share-link">Share</a>
+      <a data-url="http://glowrypauky.xyz/2014/11/22/hello-world/" data-id="8sxxx0cz9prxioqs" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/function/">function</a></li></ul>
-
     </footer>
   </div>
   
@@ -111,50 +121,10 @@
 
 
   
-    <article id="post-js-arguments-caller" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/11/26/js-arguments-caller/" class="article-date">
-  <time datetime="2014-11-26T06:03:51.000Z" itemprop="datePublished">11月 26 2014</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/11/26/js-arguments-caller/">js-function-caller</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">    <span class="comment">// 函数的caller属性指向调用该函数的引用</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">outer</span><span class="params">()</span> </span>{</div><div class="line">        inner();</div><div class="line">    }</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">inner</span><span class="params">()</span> </span>{</div><div class="line">        <span class="built_in">console</span>.log(<span class="built_in">arguments</span>.callee.caller);</div><div class="line">    }</div><div class="line">    outer();</div><div class="line">    <span class="comment">/*function outer() {</span></div><div class="line">        inner();</div><div class="line">    }*/</div><div class="line">    <span class="comment">// 全局作用域下被的函数返回null</span></div><div class="line">    <span class="built_in">console</span>.log(outer.caller); <span class="comment">// null</span></div><div class="line">})();</div></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://glowrypauky.xyz/2014/11/26/js-arguments-caller/" data-id="4yk1cjdbl38xujzl" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/function/">function</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/archives/2014/11/">&laquo; Prev</a><a class="page-number" href="/archives/2014/11/">1</a><span class="page-number current">2</span>
+    </nav>
   
 </section>
         
