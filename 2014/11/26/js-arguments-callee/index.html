@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>js-array-sort | OpenBlog</title>
+  <title>js-arguments-callee | OpenBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="123456789101112131415161718192021222324252627282930(function () {	//sort不传入参数时，对每个元素先toString()后再对其字符串作比较，所以10会在5前面	var arr = [1, 5, 10];	arr.sort();	console.log(arr); //[1, 10, 5]})();(function () {">
+  <meta name="description" content="12345678910111213141516171819(function () {	function f1(num) {		if (num &lt;= 1) {			return 1;		} else {			return num * f1(num - 1);		}	}	// arguments的callee属性是指定拥有该arguments的函数指针	function f2(num) {">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js-array-sort">
-<meta property="og:url" content="http://glowrypauky.xyz/2014/11/24/js-array-sort/">
+<meta property="og:title" content="js-arguments-callee">
+<meta property="og:url" content="http://glowrypauky.xyz/2014/11/26/js-arguments-callee/">
 <meta property="og:site_name" content="OpenBlog">
-<meta property="og:description" content="123456789101112131415161718192021222324252627282930(function () {	//sort不传入参数时，对每个元素先toString()后再对其字符串作比较，所以10会在5前面	var arr = [1, 5, 10];	arr.sort();	console.log(arr); //[1, 10, 5]})();(function () {">
+<meta property="og:description" content="12345678910111213141516171819(function () {	function f1(num) {		if (num &lt;= 1) {			return 1;		} else {			return num * f1(num - 1);		}	}	// arguments的callee属性是指定拥有该arguments的函数指针	function f2(num) {">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js-array-sort">
-<meta name="twitter:description" content="123456789101112131415161718192021222324252627282930(function () {	//sort不传入参数时，对每个元素先toString()后再对其字符串作比较，所以10会在5前面	var arr = [1, 5, 10];	arr.sort();	console.log(arr); //[1, 10, 5]})();(function () {">
+<meta name="twitter:title" content="js-arguments-callee">
+<meta name="twitter:description" content="12345678910111213141516171819(function () {	function f1(num) {		if (num &lt;= 1) {			return 1;		} else {			return num * f1(num - 1);		}	}	// arguments的callee属性是指定拥有该arguments的函数指针	function f2(num) {">
 
   
     <link rel="alternative" href="/atom.xml" title="OpenBlog" type="application/atom+xml">
@@ -65,10 +65,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-js-array-sort" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-js-arguments-callee" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2014/11/24/js-array-sort/" class="article-date">
-  <time datetime="2014-11-24T01:31:16.000Z" itemprop="datePublished">11月 24 2014</time>
+    <a href="/2014/11/26/js-arguments-callee/" class="article-date">
+  <time datetime="2014-11-26T05:33:50.000Z" itemprop="datePublished">11月 26 2014</time>
 </a>
     
   <div class="article-category">
@@ -83,7 +83,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      js-array-sort
+      js-arguments-callee
     </h1>
   
 
@@ -91,16 +91,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">	<span class="comment">//sort不传入参数时，对每个元素先toString()后再对其字符串作比较，所以10会在5前面</span></div><div class="line">	<span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">5</span>, <span class="number">10</span>];</div><div class="line">	arr.sort();</div><div class="line">	<span class="built_in">console</span>.log(arr); <span class="comment">//[1, 10, 5]</span></div><div class="line">})();</div><div class="line"></div><div class="line">(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">	<span class="comment">//简易版</span></div><div class="line">	<span class="keyword">var</span> arr = [<span class="number">2</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">3</span>];</div><div class="line">	arr.sort(<span class="function"><span class="keyword">function</span> <span class="params">(val1,val2)</span> </span>{</div><div class="line">		<span class="keyword">if</span> (val1 &lt; val2) {</div><div class="line">			<span class="keyword">return</span> -<span class="number">1</span>; <span class="comment">//如果第一个参数（val1）应该排在第二个参数(val2)前面，则返回负数</span></div><div class="line">		} <span class="keyword">else</span> <span class="keyword">if</span> (val1 &gt; val2) {</div><div class="line">			<span class="keyword">return</span> <span class="number">2</span>; <span class="comment">//如果第一个参数（val1）应该排在第二个参数(val2)后面，则返回正数</span></div><div class="line">		} <span class="keyword">else</span> {</div><div class="line">			<span class="keyword">return</span> <span class="number">0</span>; <span class="comment">//两数相等，返回0</span></div><div class="line">		}</div><div class="line">	});</div><div class="line">	<span class="built_in">console</span>.log(arr); <span class="comment">//[1, 2, 3, 4, 5]</span></div><div class="line">})();</div><div class="line"></div><div class="line">(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">	<span class="comment">//精简版</span></div><div class="line">	<span class="keyword">var</span> arr = [<span class="number">2</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">3</span>];</div><div class="line">	arr.sort(<span class="function"><span class="keyword">function</span> <span class="params">(val1,val2)</span> </span>{</div><div class="line">		<span class="keyword">return</span> val1 - val2;</div><div class="line">	});</div><div class="line">	<span class="built_in">console</span>.log(arr); <span class="comment">//[1, 2, 3, 4, 5]</span></div><div class="line">})();</div></pre></td></tr></table></figure>
+        <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">f1</span><span class="params">(num)</span> </span>{</div><div class="line">		<span class="keyword">if</span> (num &lt;= <span class="number">1</span>) {</div><div class="line">			<span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">		} <span class="keyword">else</span> {</div><div class="line">			<span class="keyword">return</span> num * f1(num - <span class="number">1</span>);</div><div class="line">		}</div><div class="line">	}</div><div class="line">	<span class="comment">// arguments的callee属性是指定拥有该arguments的函数指针</span></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">f2</span><span class="params">(num)</span> </span>{</div><div class="line">		<span class="keyword">if</span> (num &lt;= <span class="number">1</span>) {</div><div class="line">			<span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">		} <span class="keyword">else</span> {</div><div class="line">			<span class="keyword">return</span> num * <span class="built_in">arguments</span>.callee(num - <span class="number">1</span>);</div><div class="line">		}</div><div class="line">	}</div><div class="line">	<span class="built_in">console</span>.log(f1(<span class="number">3</span>)); <span class="comment">// 6</span></div><div class="line">	<span class="built_in">console</span>.log(f2(<span class="number">3</span>)); <span class="comment">// 6</span></div><div class="line">})();</div></pre></td></tr></table></figure>
 
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://glowrypauky.xyz/2014/11/24/js-array-sort/" data-id="uy9t7csxl4z499ot" class="article-share-link">Share</a>
+      <a data-url="http://glowrypauky.xyz/2014/11/26/js-arguments-callee/" data-id="klaik3hk7ww6643s" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Array/">Array</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/arguments/">arguments</a></li></ul>
 
     </footer>
   </div>
@@ -108,19 +108,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2014/11/24/js-array-splice/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          js-array-splice
-        
-      </div>
-    </a>
   
-  
-    <a href="/2014/11/23/js-array-valueOf/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2014/11/24/js-regexp-exec/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">js-array-valueOf</div>
+      <div class="article-nav-title">js-regexp-exec</div>
     </a>
   
 </nav>
