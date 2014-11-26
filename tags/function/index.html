@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: splice | OpenBlog</title>
+  <title>Tag: function | OpenBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="开源blog">
 <meta property="og:type" content="website">
 <meta property="og:title" content="OpenBlog">
-<meta property="og:url" content="http://glowrypauky.xyz/tags/splice/">
+<meta property="og:url" content="http://glowrypauky.xyz/tags/function/">
 <meta property="og:site_name" content="OpenBlog">
 <meta property="og:description" content="开源blog">
 <meta name="twitter:card" content="summary">
@@ -67,10 +67,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-js-array-splice" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-js-arguments-caller" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2014/11/24/js-array-splice/" class="article-date">
-  <time datetime="2014-11-24T14:19:01.000Z" itemprop="datePublished">11月 24 2014</time>
+    <a href="/2014/11/26/js-arguments-caller/" class="article-date">
+  <time datetime="2014-11-26T06:03:51.000Z" itemprop="datePublished">11月 26 2014</time>
 </a>
     
   <div class="article-category">
@@ -85,7 +85,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2014/11/24/js-array-splice/">js-array-splice</a>
+      <a class="article-title" href="/2014/11/26/js-arguments-caller/">js-function-caller</a>
     </h1>
   
 
@@ -93,17 +93,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="主要演示功能较强大的splice，其中还涉及到concat,slice">主要演示功能较强大的splice，其中还涉及到concat,slice</h3>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">    <span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line">    <span class="comment">// 合并数组</span></div><div class="line">    <span class="built_in">console</span>.log(arr.concat([<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>])); <span class="comment">//[1, 2, 3, 4, 5, 6]</span></div><div class="line"></div><div class="line">    <span class="comment">// slice(start, end)</span></div><div class="line">    <span class="comment">// 如果start为负数，则需加上arr的length</span></div><div class="line">    <span class="comment">// 只是返回子集，不修改原数组</span></div><div class="line">    <span class="comment">// 如果负数加上arr的length还是负数，则从0开始</span></div><div class="line">    <span class="built_in">console</span>.log(arr.slice(<span class="number">0</span>, <span class="number">3</span>)); <span class="comment">//[1, 2, 3]</span></div><div class="line">    <span class="built_in">console</span>.log(arr.slice(-<span class="number">2</span>, <span class="number">3</span>)); <span class="comment">//[2, 3]</span></div><div class="line">    <span class="built_in">console</span>.log(arr); <span class="comment">//[1, 2, 3]</span></div><div class="line">    <span class="built_in">console</span>.log(arr.slice(-<span class="number">3</span>, <span class="number">3</span>)); <span class="comment">//[1, 2, 3]</span></div><div class="line"></div><div class="line">    <span class="comment">// splice 会修改原数组</span></div><div class="line">    <span class="comment">// 第一个参数表示从元素第0个元素开始，第二个参数表示删除元素的个数为2</span></div><div class="line">    <span class="built_in">console</span>.log(arr.splice(<span class="number">0</span>, <span class="number">2</span>)); <span class="comment">//[1, 2] 返回被删除的数组子集</span></div><div class="line">    <span class="built_in">console</span>.log(arr); <span class="comment">//[3]</span></div><div class="line"></div><div class="line">    <span class="comment">// 第一个参数表示从数组的第0个元素开始，第二个参数表示要删除的元素个数，其它参数</span></div><div class="line">    <span class="comment">// 从第一个参数位置（即0）开始直接插入数组中</span></div><div class="line">    <span class="built_in">console</span>.log(arr.splice(<span class="number">0</span>, <span class="number">0</span>, <span class="number">7</span>, <span class="number">8</span>)); <span class="comment">//[] 没有元素被删除则返回空数组</span></div><div class="line">    <span class="built_in">console</span>.log(arr); <span class="comment">//[7, 8, 3]</span></div><div class="line">    <span class="built_in">console</span>.log(arr.splice(<span class="number">1</span>, <span class="number">2</span>, <span class="number">9</span>, <span class="number">10</span>)); <span class="comment">//[8, 3]</span></div><div class="line">    <span class="built_in">console</span>.log(arr); <span class="comment">// [7, 9, 10]</span></div><div class="line">})();</div></pre></td></tr></table></figure>
+        <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">	<span class="comment">// 函数的caller属性指向调用该函数的引用</span></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">outer</span><span class="params">()</span> </span>{</div><div class="line">		inner();</div><div class="line">	}</div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">inner</span><span class="params">()</span> </span>{</div><div class="line">		<span class="built_in">console</span>.log(<span class="built_in">arguments</span>.callee.caller);</div><div class="line">	}</div><div class="line">	outer();</div><div class="line">	<span class="comment">/*function outer() {</span></div><div class="line">		inner();</div><div class="line">	}*/</div><div class="line">	<span class="comment">// 全局作用域下被的函数返回null</span></div><div class="line">	<span class="built_in">console</span>.log(outer.caller); <span class="comment">// null</span></div><div class="line">})();</div></pre></td></tr></table></figure>
 
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://glowrypauky.xyz/2014/11/24/js-array-splice/" data-id="vtsf3i693xl5lorq" class="article-share-link">Share</a>
+      <a data-url="http://glowrypauky.xyz/2014/11/26/js-arguments-caller/" data-id="4yk1cjdbl38xujzl" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Array/">Array</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/splice/">splice</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/function/">function</a></li></ul>
 
     </footer>
   </div>
