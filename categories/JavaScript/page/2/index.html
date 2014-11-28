@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>js-function-caller | OpenBlog</title>
+  <title>Category: JavaScript | OpenBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="123456789101112131415(function () {    // 函数的caller属性指向调用该函数的引用    function outer() {        inner();    }    function inner() {        console.log(arguments.callee.caller);    }    outer();    /*func">
-<meta property="og:type" content="article">
-<meta property="og:title" content="js-function-caller">
-<meta property="og:url" content="http://glowrypauky.xyz/2014/11/26/js-arguments-caller/">
+  <meta name="description" content="开源blog">
+<meta property="og:type" content="website">
+<meta property="og:title" content="OpenBlog">
+<meta property="og:url" content="http://glowrypauky.xyz/categories/JavaScript/page/2/">
 <meta property="og:site_name" content="OpenBlog">
-<meta property="og:description" content="123456789101112131415(function () {    // 函数的caller属性指向调用该函数的引用    function outer() {        inner();    }    function inner() {        console.log(arguments.callee.caller);    }    outer();    /*func">
+<meta property="og:description" content="开源blog">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js-function-caller">
-<meta name="twitter:description" content="123456789101112131415(function () {    // 函数的caller属性指向调用该函数的引用    function outer() {        inner();    }    function inner() {        console.log(arguments.callee.caller);    }    outer();    /*func">
+<meta name="twitter:title" content="OpenBlog">
+<meta name="twitter:description" content="开源blog">
 
   
     <link rel="alternative" href="/atom.xml" title="OpenBlog" type="application/atom+xml">
@@ -65,10 +65,12 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-js-arguments-caller" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main">
+  
+    <article id="post-js-array-length" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2014/11/26/js-arguments-caller/" class="article-date">
-  <time datetime="2014-11-26T06:03:51.000Z" itemprop="datePublished">11月 26 2014</time>
+    <a href="/2014/11/23/js-array-length/" class="article-date">
+  <time datetime="2014-11-23T02:45:54.000Z" itemprop="datePublished">11月 23 2014</time>
 </a>
     
   <div class="article-category">
@@ -82,8 +84,8 @@
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      js-function-caller
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/23/js-array-length/">js-array-length</a>
     </h1>
   
 
@@ -91,43 +93,32 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">    <span class="comment">// 函数的caller属性指向调用该函数的引用</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">outer</span><span class="params">()</span> </span>{</div><div class="line">        inner();</div><div class="line">    }</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">inner</span><span class="params">()</span> </span>{</div><div class="line">        <span class="built_in">console</span>.log(<span class="built_in">arguments</span>.callee.caller);</div><div class="line">    }</div><div class="line">    outer();</div><div class="line">    <span class="comment">/*function outer() {</span></div><div class="line">        inner();</div><div class="line">    }*/</div><div class="line">    <span class="comment">// 全局作用域下被的函数返回null</span></div><div class="line">    <span class="built_in">console</span>.log(outer.caller); <span class="comment">// null</span></div><div class="line">})();</div></pre></td></tr></table></figure>
+        <h2 id="JavaScript_Array_Length特性">JavaScript Array Length特性</h2>
+<h3 id="可以通过设置array的length值来修改array，如：">可以通过设置array的length值来修改array，如：</h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="string">'one'</span>, <span class="string">'two'</span>, <span class="string">'three'</span>];</div><div class="line"><span class="built_in">console</span>.log(arr[<span class="number">2</span>]); <span class="comment">//three</span></div><div class="line">arr.length = <span class="number">2</span>;</div><div class="line"><span class="built_in">console</span>.log(arr[<span class="number">2</span>]); <span class="comment">//undefined</span></div><div class="line">arr.length = <span class="number">5</span>;</div><div class="line"><span class="built_in">console</span>.log(arr.length); <span class="comment">//5</span></div></pre></td></tr></table></figure>
 
+<p>减少length值，会从array的末尾移除相应个数的元素；<br>增加length值，会从array的末尾增加相应个数的元素。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://glowrypauky.xyz/2014/11/26/js-arguments-caller/" data-id="4yk1cjdbl38xujzl" class="article-share-link">Share</a>
+      <a data-url="http://glowrypauky.xyz/2014/11/23/js-array-length/" data-id="f5uzzf379ji7xrzz" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/function/">function</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Array/">Array</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
 
     </footer>
   </div>
   
-    
-<nav id="article-nav">
-  
-    <a href="/2014/11/26/js-function-apply-call/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          js-function-apply_call
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2014/11/26/js-function-callee/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">js-arguments-callee</div>
-    </a>
-  
-</nav>
-
-  
 </article>
 
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/categories/JavaScript/">&laquo; Prev</a><a class="page-number" href="/categories/JavaScript/">1</a><span class="page-number current">2</span>
+    </nav>
+  
 </section>
         
           <aside id="sidebar">

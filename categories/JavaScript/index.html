@@ -67,6 +67,50 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-js-oo-inherit" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/29/js-oo-inherit/" class="article-date">
+  <time datetime="2014-11-28T16:24:46.000Z" itemprop="datePublished">11月 29 2014</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/29/js-oo-inherit/">js-oo-inherit</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">    <span class="comment">// 原型继承</span></div><div class="line">    <span class="comment">// 优点：简单，功能强大，有助于理解js内部机理</span></div><div class="line">    <span class="comment">// 缺点：引用类型的共享会造成混乱，子类继承超类时不能单独传递参数给超类</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">SuperType</span><span class="params">()</span> </span>{</div><div class="line">        <span class="keyword">this</span>.name = <span class="string">'glowry'</span>;</div><div class="line">    }</div><div class="line">    SuperType.prototype.getName = <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.name;</div><div class="line">    };</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">SubType</span><span class="params">()</span> </span>{</div><div class="line">        <span class="keyword">this</span>.name = <span class="string">'pauky'</span>;</div><div class="line">    }</div><div class="line">    <span class="comment">// 子类型构造函数（SubType）的原型赋值为超类型构造函数（SuperType）的实例，实例的内部属性指向超类原型</span></div><div class="line">    <span class="comment">// 这样子类型实例指向新原型，新原型指向超类原型，就实现了子类实例继承超类</span></div><div class="line">    SubType.prototype = <span class="keyword">new</span> SuperType();</div><div class="line">    <span class="keyword">var</span> children = <span class="keyword">new</span> SubType();</div><div class="line">    <span class="built_in">console</span>.log(children.getName()); <span class="comment">// "pauky"</span></div><div class="line">    <span class="built_in">console</span>.log(children <span class="keyword">instanceof</span> SuperType); <span class="comment">// true</span></div><div class="line">    <span class="built_in">console</span>.log(children <span class="keyword">instanceof</span> SubType); <span class="comment">// true</span></div><div class="line">    <span class="built_in">console</span>.log(SuperType.prototype.isPrototypeOf(children)); <span class="comment">// true</span></div><div class="line">    <span class="built_in">console</span>.log(SubType.prototype.isPrototypeOf(children)); <span class="comment">// true</span></div><div class="line">})();</div><div class="line"></div><div class="line">(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">    <span class="comment">// 借用构造函数</span></div><div class="line">    <span class="comment">// 优点：共享的引用类型在子类中会创建各自的副本，所以不会导致引用的混乱;子类可单独传递参数给超类</span></div><div class="line">    <span class="comment">// 缺点：超类中需要共享用所有子类的函数和方法无法复用，所以降低了效率</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">SuperType</span><span class="params">(myColor)</span> </span>{</div><div class="line">        <span class="keyword">this</span>.colors = [<span class="string">'blue'</span>, <span class="string">'red'</span>, myColor];</div><div class="line">        <span class="keyword">this</span>.getYourColor = <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.colors[<span class="number">2</span>];</div><div class="line">        }</div><div class="line">    }</div><div class="line">    <span class="comment">// 此模式不能通过下面的做法来复用共享的方法函数</span></div><div class="line">    <span class="comment">// SuperType.prototype.getYourColor = function () {</span></div><div class="line">    <span class="comment">//  return this.colors[2];</span></div><div class="line">    <span class="comment">// };</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">SubType</span><span class="params">()</span> </span>{</div><div class="line">        SuperType.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>);</div><div class="line">    }</div><div class="line">    <span class="keyword">var</span> children1 = <span class="keyword">new</span> SubType(<span class="string">'black'</span>);</div><div class="line">    <span class="built_in">console</span>.log(children1.colors); <span class="comment">// ["blue", "red", "black"]</span></div><div class="line">    <span class="keyword">var</span> children2 = <span class="keyword">new</span> SubType(<span class="string">'gray'</span>);</div><div class="line">    <span class="built_in">console</span>.log(children2.colors); <span class="comment">// ["blue", "red", "gray"]</span></div><div class="line">    <span class="built_in">console</span>.log(children1.getYourColor()); <span class="comment">// blace</span></div><div class="line">    <span class="built_in">console</span>.log(children2.getYourColor()); <span class="comment">// gray</span></div><div class="line">})();</div><div class="line"></div><div class="line">(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">    <span class="comment">// 组合继承</span></div><div class="line">    <span class="comment">// 优点：集合了借用构造函数和原型继承的优势</span></div><div class="line">    <span class="comment">// 缺点：调用了两次超类构造函数</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">SuperType</span><span class="params">(myColor)</span> </span>{</div><div class="line">        <span class="keyword">this</span>.colors = [<span class="string">'blue'</span>, <span class="string">'red'</span>, myColor];</div><div class="line">    }</div><div class="line">    SuperType.prototype.getColors = <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.colors;</div><div class="line">    };</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">SubType</span><span class="params">()</span> </span>{</div><div class="line">        SuperType.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>);</div><div class="line">    }</div><div class="line">    SubType.prototype = <span class="keyword">new</span> SuperType();</div><div class="line">    <span class="keyword">var</span> children1 = <span class="keyword">new</span> SubType(<span class="string">'black'</span>);</div><div class="line">    <span class="built_in">console</span>.log(children1.getColors()); <span class="comment">// ["blue", "red", "black"]</span></div><div class="line">})();</div><div class="line"></div><div class="line">(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">    <span class="comment">// 原型式继承 - 道格拉斯.克罗克福德提出</span></div><div class="line">    <span class="comment">// 优点：省去子类构造函数</span></div><div class="line">    <span class="comment">// 缺点：与原型继承一样存在共享引用类型的问题</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">object</span><span class="params">(o)</span> </span>{</div><div class="line">        <span class="function"><span class="keyword">function</span> <span class="title">F</span><span class="params">()</span> </span>{}</div><div class="line">        F.prototype = o;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> F();</div><div class="line">    }</div><div class="line">})();</div><div class="line"></div><div class="line">(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">    <span class="comment">// 寄生模式</span></div><div class="line">    <span class="comment">// 类似工厂模式，形式简单，封装性好，缺点是不能做到函数的复用，对于继承的对象识别也缺乏</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">object</span><span class="params">(o)</span> </span>{</div><div class="line">        <span class="function"><span class="keyword">function</span> <span class="title">F</span><span class="params">()</span> </span>{}</div><div class="line">        F.prototype = o;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> F();</div><div class="line">    }</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">creatObject</span><span class="params">(original)</span> </span>{</div><div class="line">        <span class="keyword">var</span> clone = object(original);</div><div class="line">        clone.say = <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">'kk'</span>);</div><div class="line">        }</div><div class="line">        <span class="keyword">return</span> clone;</div><div class="line">    }</div><div class="line"></div><div class="line">    <span class="keyword">var</span> person = {</div><div class="line">        name: <span class="string">'glowry'</span>,</div><div class="line">        colors: [<span class="string">'blue'</span>, <span class="string">'red'</span>]</div><div class="line">    }</div><div class="line">    <span class="keyword">var</span> kk = creatObject(person);</div><div class="line">    kk.say(); <span class="comment">// kk</span></div><div class="line">})();</div><div class="line"></div><div class="line">(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">    <span class="comment">// 寄生组合式继承</span></div><div class="line">    <span class="comment">// 引用类型继承之最理想的方式，是实现基于类型继承的最有效的方式</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">object</span><span class="params">(o)</span> </span>{</div><div class="line">        <span class="function"><span class="keyword">function</span> <span class="title">F</span><span class="params">()</span> </span>{}</div><div class="line">        F.prototype = o;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> F();</div><div class="line">    }</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">inheritPrototype</span><span class="params">(subType, superType)</span> </span>{</div><div class="line">        <span class="keyword">var</span> prototype = object(superType.prototype);</div><div class="line">        prototype.construtor = superType;</div><div class="line">        subType.prototype = prototype;</div><div class="line">    }</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">SuperType</span><span class="params">(myColor)</span> </span>{</div><div class="line">        <span class="keyword">this</span>.colors = [<span class="string">'blue'</span>, <span class="string">'red'</span>, myColor];</div><div class="line">    }</div><div class="line">    SuperType.prototype.getColors = <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.colors;</div><div class="line">    };</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">SubType</span><span class="params">()</span> </span>{</div><div class="line">        SuperType.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>);</div><div class="line">    }</div><div class="line">    <span class="comment">// Sub.prototype = new SuperType();</span></div><div class="line">    inheritPrototype(SubType, SuperType);</div><div class="line">    <span class="keyword">var</span> children1 = <span class="keyword">new</span> SubType(<span class="string">'black'</span>);</div><div class="line">    <span class="built_in">console</span>.log(children1.getColors()); <span class="comment">// ["blue", "red", "black"]</span></div><div class="line">})();</div></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://glowrypauky.xyz/2014/11/29/js-oo-inherit/" data-id="naxjg1lkzzwi9hg7" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面向对象/">面向对象</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-js-oo-newObject" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/11/27/js-oo-newObject/" class="article-date">
@@ -466,53 +510,10 @@
 
 
   
-    <article id="post-js-array-length" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/11/23/js-array-length/" class="article-date">
-  <time datetime="2014-11-23T02:45:54.000Z" itemprop="datePublished">11月 23 2014</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/11/23/js-array-length/">js-array-length</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="JavaScript_Array_Length特性">JavaScript Array Length特性</h2>
-<h3 id="可以通过设置array的length值来修改array，如：">可以通过设置array的length值来修改array，如：</h3>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="string">'one'</span>, <span class="string">'two'</span>, <span class="string">'three'</span>];</div><div class="line"><span class="built_in">console</span>.log(arr[<span class="number">2</span>]); <span class="comment">//three</span></div><div class="line">arr.length = <span class="number">2</span>;</div><div class="line"><span class="built_in">console</span>.log(arr[<span class="number">2</span>]); <span class="comment">//undefined</span></div><div class="line">arr.length = <span class="number">5</span>;</div><div class="line"><span class="built_in">console</span>.log(arr.length); <span class="comment">//5</span></div></pre></td></tr></table></figure>
-
-<p>减少length值，会从array的末尾移除相应个数的元素；<br>增加length值，会从array的末尾增加相应个数的元素。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://glowrypauky.xyz/2014/11/23/js-array-length/" data-id="f5uzzf379ji7xrzz" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Array/">Array</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/categories/JavaScript/page/2/">2</a><a class="extend next" rel="next" href="/categories/JavaScript/page/2/">Next &raquo;</a>
+    </nav>
   
 </section>
         
@@ -522,7 +523,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/日志/">日志</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/测试/">测试</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/日志/">日志</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/测试/">测试</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -531,7 +532,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Array/">Array</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RegExp/">RegExp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/agruments/">agruments</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/arguments/">arguments</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/exec/">exec</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/function/">function</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/splice/">splice</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开始/">开始</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面向对象/">面向对象</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Array/">Array</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RegExp/">RegExp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/agruments/">agruments</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/arguments/">arguments</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/exec/">exec</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/function/">function</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/splice/">splice</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开始/">开始</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面向对象/">面向对象</a><span class="tag-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -540,7 +541,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Array/" style="font-size: 17.50px;">Array</a><a href="/tags/JavaScript/" style="font-size: 20.00px;">JavaScript</a><a href="/tags/RegExp/" style="font-size: 12.50px;">RegExp</a><a href="/tags/agruments/" style="font-size: 12.50px;">agruments</a><a href="/tags/arguments/" style="font-size: 12.50px;">arguments</a><a href="/tags/array/" style="font-size: 10.00px;">array</a><a href="/tags/exec/" style="font-size: 12.50px;">exec</a><a href="/tags/function/" style="font-size: 15.00px;">function</a><a href="/tags/javascript/" style="font-size: 10.00px;">javascript</a><a href="/tags/node-js/" style="font-size: 12.50px;">node.js</a><a href="/tags/splice/" style="font-size: 12.50px;">splice</a><a href="/tags/valueOf/" style="font-size: 10.00px;">valueOf</a><a href="/tags/开始/" style="font-size: 12.50px;">开始</a><a href="/tags/我/" style="font-size: 10.00px;">我</a><a href="/tags/日记/" style="font-size: 10.00px;">日记</a><a href="/tags/面向对象/" style="font-size: 12.50px;">面向对象</a>
+      <a href="/tags/Array/" style="font-size: 17.50px;">Array</a><a href="/tags/JavaScript/" style="font-size: 20.00px;">JavaScript</a><a href="/tags/RegExp/" style="font-size: 12.50px;">RegExp</a><a href="/tags/agruments/" style="font-size: 12.50px;">agruments</a><a href="/tags/arguments/" style="font-size: 12.50px;">arguments</a><a href="/tags/array/" style="font-size: 10.00px;">array</a><a href="/tags/exec/" style="font-size: 12.50px;">exec</a><a href="/tags/function/" style="font-size: 15.00px;">function</a><a href="/tags/javascript/" style="font-size: 10.00px;">javascript</a><a href="/tags/node-js/" style="font-size: 12.50px;">node.js</a><a href="/tags/splice/" style="font-size: 12.50px;">splice</a><a href="/tags/valueOf/" style="font-size: 10.00px;">valueOf</a><a href="/tags/开始/" style="font-size: 12.50px;">开始</a><a href="/tags/我/" style="font-size: 10.00px;">我</a><a href="/tags/日记/" style="font-size: 10.00px;">日记</a><a href="/tags/面向对象/" style="font-size: 15.00px;">面向对象</a>
     </div>
   </div>
 
@@ -549,7 +550,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">May 2014</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">May 2014</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -559,6 +560,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2014/11/29/js-oo-inherit/">js-oo-inherit</a>
+          </li>
         
           <li>
             <a href="/2014/11/27/js-oo-newObject/">js-oo-newObject</a>
@@ -574,10 +579,6 @@
         
           <li>
             <a href="/2014/11/26/js-function-callee/">js-arguments-callee</a>
-          </li>
-        
-          <li>
-            <a href="/2014/11/24/js-regexp-exec/">js-regexp-exec</a>
           </li>
         
       </ul>
