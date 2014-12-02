@@ -67,94 +67,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-js-senior-curry" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/12/02/js-senior-curry/" class="article-date">
-  <time datetime="2014-12-02T15:22:06.000Z" itemprop="datePublished">12月 2 2014</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/12/02/js-senior-curry/">js-senior-curry</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">    <span class="comment">// 函数柯里化</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">curry</span><span class="params">(fn)</span> </span>{</div><div class="line">        <span class="keyword">var</span> args = <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>, <span class="number">1</span>);</div><div class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">            <span class="keyword">var</span> innerArgs = <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>),</div><div class="line">                finalArgs = args.concat(innerArgs);</div><div class="line">            <span class="keyword">return</span> fn.apply(<span class="literal">null</span>, finalArgs);</div><div class="line">        };</div><div class="line">    }</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">add</span><span class="params">(num1, num2)</span> </span>{</div><div class="line">        <span class="keyword">return</span> num1 + num2;</div><div class="line">    }</div><div class="line">    <span class="keyword">var</span> addNum = curry(add, <span class="number">5</span>);</div><div class="line">    <span class="built_in">console</span>.log(addNum(<span class="number">3</span>)); <span class="comment">// 8</span></div><div class="line"></div><div class="line">    <span class="comment">// 使用函数柯里化常做为函数绑定的一部分</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">bind</span><span class="params">(fn, context)</span> </span>{</div><div class="line">        <span class="keyword">var</span> args = <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>, <span class="number">2</span>);</div><div class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">            <span class="keyword">var</span> innerArgs = <span class="built_in">Array</span>.prototype.slice(<span class="built_in">arguments</span>),</div><div class="line">                finalArgs = args.concat(innerArgs);</div><div class="line">            <span class="keyword">return</span> fn.apply(context, finalArgs);</div><div class="line">        };</div><div class="line">    }</div><div class="line">    <span class="keyword">var</span> kk = {</div><div class="line">        message: <span class="string">'ykk'</span>,</div><div class="line">        f: <span class="function"><span class="keyword">function</span> <span class="params">(arg)</span> </span>{</div><div class="line">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.message + arg);</div><div class="line">        }</div><div class="line">    }</div><div class="line">    $(<span class="string">'select'</span>).change(bind(kk.f, kk, <span class="string">'yrw'</span>)); <span class="comment">// ykkyrw</span></div><div class="line">})();</div></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://glowrypauky.xyz/2014/12/02/js-senior-curry/" data-id="pbmkunrs078csmsz" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/function/">function</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-js-senior-bind" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/12/02/js-senior-bind/" class="article-date">
-  <time datetime="2014-12-02T15:20:15.000Z" itemprop="datePublished">12月 2 2014</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/12/02/js-senior-bind/">js-senior-bind</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">    <span class="comment">// 函数绑定</span></div><div class="line">    <span class="comment">// 有时候需要函数在某一环境下执行</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">bind</span><span class="params">(fn, context)</span> </span>{</div><div class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">            fn.apply(context, <span class="built_in">arguments</span>);</div><div class="line">        }</div><div class="line">    }</div><div class="line">    <span class="keyword">var</span> kk = {</div><div class="line">        message: <span class="string">'123'</span>,</div><div class="line">        f: <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.message);</div><div class="line">        }</div><div class="line">    }</div><div class="line">    $(<span class="string">'select'</span>).change(kk.f); <span class="comment">// undefined</span></div><div class="line">    <span class="comment">// 解决方案1：添加闭包</span></div><div class="line">    $(<span class="string">'select'</span>).change(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">        kk.f(); <span class="comment">// 123</span></div><div class="line">    });</div><div class="line">    <span class="comment">// 解决方案2：使用bind</span></div><div class="line">    <span class="comment">// 实际上也是添加闭包</span></div><div class="line">    $(<span class="string">'select'</span>).change(bind(kk.f, kk)); <span class="comment">// 123</span></div><div class="line"></div><div class="line">    <span class="comment">// 注：ECMAScript5为每个函数定义了原生的bind()</span></div><div class="line">    $(<span class="string">'select'</span>).change(kk.f.bind(kk)); <span class="comment">// 123</span></div><div class="line">})();</div></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://glowrypauky.xyz/2014/12/02/js-senior-bind/" data-id="382sv30zv3p02yb9" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/function/">function</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-js-function-apply-call" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/11/26/js-function-apply-call/" class="article-date">
@@ -261,7 +173,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Array/">Array</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">18</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RegExp/">RegExp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/arguments/">arguments</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/closure/">closure</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/exec/">exec</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/function/">function</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/privateVariable/">privateVariable</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/senior/">senior</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/splice/">splice</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/variable/">variable</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开始/">开始</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面向对象/">面向对象</a><span class="tag-list-count">2</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Array/">Array</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">18</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RegExp/">RegExp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/arguments/">arguments</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/closure/">closure</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/exec/">exec</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/function/">function</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/privateVariable/">privateVariable</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/senior/">senior</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/splice/">splice</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/variable/">variable</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开始/">开始</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面向对象/">面向对象</a><span class="tag-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -270,7 +182,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Array/" style="font-size: 17.50px;">Array</a><a href="/tags/JavaScript/" style="font-size: 20.00px;">JavaScript</a><a href="/tags/RegExp/" style="font-size: 12.50px;">RegExp</a><a href="/tags/agruments/" style="font-size: 10.00px;">agruments</a><a href="/tags/arguments/" style="font-size: 15.00px;">arguments</a><a href="/tags/array/" style="font-size: 10.00px;">array</a><a href="/tags/closure/" style="font-size: 12.50px;">closure</a><a href="/tags/exec/" style="font-size: 12.50px;">exec</a><a href="/tags/function/" style="font-size: 17.50px;">function</a><a href="/tags/javascript/" style="font-size: 10.00px;">javascript</a><a href="/tags/node-js/" style="font-size: 12.50px;">node.js</a><a href="/tags/privateVariable/" style="font-size: 12.50px;">privateVariable</a><a href="/tags/senior/" style="font-size: 12.50px;">senior</a><a href="/tags/splice/" style="font-size: 12.50px;">splice</a><a href="/tags/valueOf/" style="font-size: 10.00px;">valueOf</a><a href="/tags/variable/" style="font-size: 12.50px;">variable</a><a href="/tags/开始/" style="font-size: 12.50px;">开始</a><a href="/tags/我/" style="font-size: 10.00px;">我</a><a href="/tags/日记/" style="font-size: 10.00px;">日记</a><a href="/tags/面向对象/" style="font-size: 15.00px;">面向对象</a>
+      <a href="/tags/Array/" style="font-size: 18.00px;">Array</a><a href="/tags/JavaScript/" style="font-size: 20.00px;">JavaScript</a><a href="/tags/RegExp/" style="font-size: 12.00px;">RegExp</a><a href="/tags/agruments/" style="font-size: 10.00px;">agruments</a><a href="/tags/arguments/" style="font-size: 14.00px;">arguments</a><a href="/tags/array/" style="font-size: 10.00px;">array</a><a href="/tags/closure/" style="font-size: 12.00px;">closure</a><a href="/tags/exec/" style="font-size: 12.00px;">exec</a><a href="/tags/function/" style="font-size: 14.00px;">function</a><a href="/tags/javascript/" style="font-size: 10.00px;">javascript</a><a href="/tags/node-js/" style="font-size: 12.00px;">node.js</a><a href="/tags/privateVariable/" style="font-size: 12.00px;">privateVariable</a><a href="/tags/senior/" style="font-size: 16.00px;">senior</a><a href="/tags/splice/" style="font-size: 12.00px;">splice</a><a href="/tags/valueOf/" style="font-size: 10.00px;">valueOf</a><a href="/tags/variable/" style="font-size: 12.00px;">variable</a><a href="/tags/开始/" style="font-size: 12.00px;">开始</a><a href="/tags/我/" style="font-size: 10.00px;">我</a><a href="/tags/日记/" style="font-size: 10.00px;">日记</a><a href="/tags/面向对象/" style="font-size: 14.00px;">面向对象</a>
     </div>
   </div>
 
