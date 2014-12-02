@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2014/11 | OpenBlog</title>
+  <title>Tag: variable | OpenBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="开源blog">
 <meta property="og:type" content="website">
 <meta property="og:title" content="OpenBlog">
-<meta property="og:url" content="http://glowrypauky.xyz/archives/2014/11/page/2/">
+<meta property="og:url" content="http://glowrypauky.xyz/tags/variable/">
 <meta property="og:site_name" content="OpenBlog">
 <meta property="og:description" content="开源blog">
 <meta name="twitter:card" content="summary">
@@ -67,10 +67,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-js-array-length" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-js-variable" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2014/11/23/js-array-length/" class="article-date">
-  <time datetime="2014-11-23T02:45:54.000Z" itemprop="datePublished">11月 23 2014</time>
+    <a href="/2014/12/01/js-variable/" class="article-date">
+  <time datetime="2014-12-01T07:46:54.000Z" itemprop="datePublished">12月 1 2014</time>
 </a>
     
   <div class="article-category">
@@ -85,7 +85,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2014/11/23/js-array-length/">js-array-length</a>
+      <a class="article-title" href="/2014/12/01/js-variable/">js-varible</a>
     </h1>
   
 
@@ -93,19 +93,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="JavaScript_Array_Length特性">JavaScript Array Length特性</h2>
-<h3 id="可以通过设置array的length值来修改array，如：">可以通过设置array的length值来修改array，如：</h3>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="string">'one'</span>, <span class="string">'two'</span>, <span class="string">'three'</span>];</div><div class="line"><span class="built_in">console</span>.log(arr[<span class="number">2</span>]); <span class="comment">//three</span></div><div class="line">arr.length = <span class="number">2</span>;</div><div class="line"><span class="built_in">console</span>.log(arr[<span class="number">2</span>]); <span class="comment">//undefined</span></div><div class="line">arr.length = <span class="number">5</span>;</div><div class="line"><span class="built_in">console</span>.log(arr.length); <span class="comment">//5</span></div></pre></td></tr></table></figure>
+        <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">    <span class="keyword">var</span> i = <span class="number">0</span>;</div><div class="line">    <span class="built_in">console</span>.log(i); <span class="comment">// 0</span></div><div class="line">    <span class="comment">// 如果这个变量已经被定义，则忽略后续的声明</span></div><div class="line">    <span class="keyword">var</span> i;</div><div class="line">    <span class="built_in">console</span>.log(i); <span class="comment">// 0</span></div><div class="line">    <span class="comment">// 但会执行后续的初始化</span></div><div class="line">    <span class="keyword">var</span> i = <span class="number">1</span>;</div><div class="line">    <span class="built_in">console</span>.log(i); <span class="comment">// 1</span></div><div class="line"></div><div class="line">    <span class="comment">//未用var声明的变量为全局变量</span></div><div class="line">    (<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">        globalArg = <span class="string">'ykk'</span>;</div><div class="line">    })();</div><div class="line">    <span class="built_in">console</span>.log(globalArg); <span class="comment">// ykk</span></div><div class="line">})();</div><div class="line"><span class="built_in">console</span>.log(globalArg); <span class="comment">// ykk</span></div></pre></td></tr></table></figure>
 
-<p>减少length值，会从array的末尾移除相应个数的元素；<br>增加length值，会从array的末尾增加相应个数的元素。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://glowrypauky.xyz/2014/11/23/js-array-length/" data-id="f5uzzf379ji7xrzz" class="article-share-link">Share</a>
+      <a data-url="http://glowrypauky.xyz/2014/12/01/js-variable/" data-id="pdfb3gogcz50a0vt" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Array/">Array</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/variable/">variable</a></li></ul>
 
     </footer>
   </div>
@@ -114,108 +111,6 @@
 
 
   
-    <article id="post-second" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/11/22/second/" class="article-date">
-  <time datetime="2014-11-22T14:37:46.000Z" itemprop="datePublished">11月 22 2014</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/测试/">测试</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/11/22/second/">second</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'Hello World!'</span>);</div><div class="line">})();</div></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://glowrypauky.xyz/2014/11/22/second/" data-id="8bv7h1b293iiz0oi" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/11/22/hello-world/" class="article-date">
-  <time datetime="2014-11-22T03:07:26.000Z" itemprop="datePublished">11月 22 2014</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/11/22/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">trobuleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2>
-<h3 id="Create_a_new_post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://glowrypauky.xyz/2014/11/22/hello-world/" data-id="8sxxx0cz9prxioqs" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-  
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2014/11/">&laquo; Prev</a><a class="page-number" href="/archives/2014/11/">1</a><span class="page-number current">2</span>
-    </nav>
   
 </section>
         
