@@ -67,6 +67,60 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-js-base-testType" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/12/04/js-base-testType/" class="article-date">
+  <time datetime="2014-12-04T05:43:52.000Z" itemprop="datePublished">12月 4 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/12/04/js-base-testType/">js-base-testType</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="JavaScript有两种数据类型，基本类型和引用类型。">JavaScript有两种数据类型，基本类型和引用类型。</h2>
+<p>基本类型包括：数字，字符串，布尔值，undefined；<br>引用类型包括：Object，Array，RegExp。<br><strong>用typeof可以基本上区分开基本类型和引用类型，除了null。</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="number">1</span>); <span class="comment">//number</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="string">'kk'</span>); <span class="comment">//string</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="literal">true</span>); <span class="comment">//boolean</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="literal">undefined</span>); <span class="comment">//undefined</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="literal">null</span>); <span class="comment">//object</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">typeof</span> {}); <span class="comment">//object</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">typeof</span> []); <span class="comment">//object</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">typeof</span> /\d/); <span class="comment">//object</span></div><div class="line">})();</div></pre></td></tr></table></figure>
+
+<p>因此，可通过下列代码区分基本类型与引用类型：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">    <span class="keyword">var</span> test = <span class="string">'test'</span>;</div><div class="line">    <span class="keyword">var</span> checkType = <span class="function"><span class="keyword">function</span> <span class="params">(data)</span> </span>{</div><div class="line">        <span class="keyword">if</span> (<span class="keyword">typeof</span> data === <span class="literal">null</span>) {</div><div class="line">            <span class="keyword">return</span> <span class="string">'基本类型'</span>;</div><div class="line">        } <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">typeof</span> data === <span class="string">'string'</span> || <span class="keyword">typeof</span> data === <span class="string">'number'</span> || <span class="keyword">typeof</span> data === <span class="string">'boolean'</span> || <span class="keyword">typeof</span> data === <span class="string">'undefined'</span>) {</div><div class="line">            <span class="keyword">return</span> <span class="string">'基本类型'</span>;</div><div class="line">        } <span class="keyword">else</span> {</div><div class="line">            <span class="keyword">return</span> <span class="string">'引用类型'</span>;</div><div class="line">        }</div><div class="line">    };</div><div class="line">    <span class="built_in">console</span>.log(checkType(test)); <span class="comment">//基本类型</span></div><div class="line">})();</div></pre></td></tr></table></figure>
+
+<p>注：typeof检测正则表达式时，在safari5及chrome7以下版本返回function，这是因为ECMA-262规定任何内部实现call方法的对象都应该在应用typeof操作符时返回function。<br>区分开基本类型与引用类型后，也许我们还想从引用类型中找出不同值的对象，比如Object，Array，RegExp等，这就需要另一个操作符instanceof。它是根据对象的原型链来判断的：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">    <span class="keyword">var</span> reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(),</div><div class="line">            obj = {},</div><div class="line">            arr = [];</div><div class="line">    <span class="built_in">console</span>.log(reg <span class="keyword">instanceof</span> <span class="built_in">RegExp</span>); <span class="comment">//true</span></div><div class="line">    <span class="built_in">console</span>.log(obj <span class="keyword">instanceof</span> <span class="built_in">Object</span>); <span class="comment">//true</span></div><div class="line">    <span class="built_in">console</span>.log(arr <span class="keyword">instanceof</span> <span class="built_in">Array</span>); <span class="comment">//true</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{} <span class="keyword">instanceof</span> <span class="built_in">Function</span>); <span class="comment">//true</span></div><div class="line">})();</div></pre></td></tr></table></figure>
+
+<p>注：所有引用类型都是Object的实例，所以在检测一个引用类型值和Object构造函数时，都返回true。如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log([] <span class="keyword">instanceof</span> <span class="built_in">Object</span>); <span class="comment">// true</span></div></pre></td></tr></table></figure>
+
+<p><strong>如果页面包含iframe，而且需要在iframe之间的变量进行类型判断，则需要采用下面的方法（因为iframe都拥有独自的window对象，而且引用类型也是各自独立的，所以上述方法无法正确识别数据类型）：</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">    <span class="comment">// 判断类型</span></div><div class="line">    <span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>],</div><div class="line">        reg = <span class="regexp">/\d/</span>;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">isArray</span><span class="params">(val)</span> </span>{</div><div class="line">        <span class="keyword">return</span> <span class="built_in">Object</span>.prototype.toString.call(val) === <span class="string">'[object Array]'</span>;</div><div class="line">    }</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">isFunction</span><span class="params">(val)</span> </span>{</div><div class="line">        <span class="comment">// 由于ie以COM形式实现函数，所以此函数不能在ie下不能正常使用</span></div><div class="line">        <span class="keyword">return</span> <span class="built_in">Object</span>.prototype.toString.call(val) === <span class="string">'[object Function]'</span>;</div><div class="line">    }</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">isRegExp</span><span class="params">(val)</span> </span>{</div><div class="line">        <span class="keyword">return</span> <span class="built_in">Object</span>.prototype.toString.call(val) === <span class="string">'[object RegExp]'</span>;</div><div class="line">    }</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">isNativeJSON</span><span class="params">(val)</span> </span>{</div><div class="line">        <span class="comment">// 判断是否为原生JSON对象</span></div><div class="line">        <span class="keyword">return</span> <span class="built_in">window</span>.JSON && <span class="built_in">Object</span>.prototype.toString.call(val) === <span class="string">'[object JSON]'</span>;</div><div class="line">    }</div><div class="line">    <span class="built_in">console</span>.log(isArray(arr)); <span class="comment">// true</span></div><div class="line">    <span class="built_in">console</span>.log(isFunction(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{})); <span class="comment">// true</span></div><div class="line">    <span class="built_in">console</span>.log(isRegExp(reg)); <span class="comment">// true</span></div><div class="line">    <span class="built_in">console</span>.log(isArray(reg)); <span class="comment">// false</span></div><div class="line">    <span class="built_in">console</span>.log(isNativeJSON(<span class="built_in">JSON</span>)); <span class="comment">// true</span></div><div class="line">})();</div></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://glowrypauky.xyz/2014/12/04/js-base-testType/" data-id="lvhdflbgxhgmv4ow" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/base/">base</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-js-senior-curry" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/12/02/js-senior-curry/" class="article-date">
@@ -465,50 +519,6 @@
 
 
   
-    <article id="post-js-arguments-caller" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/11/26/js-arguments-caller/" class="article-date">
-  <time datetime="2014-11-26T06:03:51.000Z" itemprop="datePublished">11月 26 2014</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/11/26/js-arguments-caller/">js-function-caller</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">    <span class="comment">// 函数的caller属性指向调用该函数的引用</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">outer</span><span class="params">()</span> </span>{</div><div class="line">        inner();</div><div class="line">    }</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">inner</span><span class="params">()</span> </span>{</div><div class="line">        <span class="built_in">console</span>.log(<span class="built_in">arguments</span>.callee.caller);</div><div class="line">    }</div><div class="line">    outer();</div><div class="line">    <span class="comment">/*function outer() {</span></div><div class="line">        inner();</div><div class="line">    }*/</div><div class="line">    <span class="comment">// 全局作用域下被的函数返回null</span></div><div class="line">    <span class="built_in">console</span>.log(outer.caller); <span class="comment">// null</span></div><div class="line">})();</div></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://glowrypauky.xyz/2014/11/26/js-arguments-caller/" data-id="4yk1cjdbl38xujzl" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/function/">function</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/tags/JavaScript/page/2/">2</a><a class="extend next" rel="next" href="/tags/JavaScript/page/2/">Next &raquo;</a>
@@ -531,7 +541,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Array/">Array</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">18</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RegExp/">RegExp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/arguments/">arguments</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/closure/">closure</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/exec/">exec</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/function/">function</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/privateVariable/">privateVariable</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/senior/">senior</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/splice/">splice</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/variable/">variable</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开始/">开始</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面向对象/">面向对象</a><span class="tag-list-count">2</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Array/">Array</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">19</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RegExp/">RegExp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/arguments/">arguments</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/base/">base</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/closure/">closure</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/exec/">exec</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/function/">function</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/privateVariable/">privateVariable</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/senior/">senior</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/splice/">splice</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/variable/">variable</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开始/">开始</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面向对象/">面向对象</a><span class="tag-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -540,7 +550,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Array/" style="font-size: 18.00px;">Array</a><a href="/tags/JavaScript/" style="font-size: 20.00px;">JavaScript</a><a href="/tags/RegExp/" style="font-size: 12.00px;">RegExp</a><a href="/tags/agruments/" style="font-size: 10.00px;">agruments</a><a href="/tags/arguments/" style="font-size: 14.00px;">arguments</a><a href="/tags/array/" style="font-size: 10.00px;">array</a><a href="/tags/closure/" style="font-size: 12.00px;">closure</a><a href="/tags/exec/" style="font-size: 12.00px;">exec</a><a href="/tags/function/" style="font-size: 14.00px;">function</a><a href="/tags/javascript/" style="font-size: 10.00px;">javascript</a><a href="/tags/node-js/" style="font-size: 12.00px;">node.js</a><a href="/tags/privateVariable/" style="font-size: 12.00px;">privateVariable</a><a href="/tags/senior/" style="font-size: 16.00px;">senior</a><a href="/tags/splice/" style="font-size: 12.00px;">splice</a><a href="/tags/valueOf/" style="font-size: 10.00px;">valueOf</a><a href="/tags/variable/" style="font-size: 12.00px;">variable</a><a href="/tags/开始/" style="font-size: 12.00px;">开始</a><a href="/tags/我/" style="font-size: 10.00px;">我</a><a href="/tags/日记/" style="font-size: 10.00px;">日记</a><a href="/tags/面向对象/" style="font-size: 14.00px;">面向对象</a>
+      <a href="/tags/Array/" style="font-size: 18.00px;">Array</a><a href="/tags/JavaScript/" style="font-size: 20.00px;">JavaScript</a><a href="/tags/RegExp/" style="font-size: 12.00px;">RegExp</a><a href="/tags/agruments/" style="font-size: 10.00px;">agruments</a><a href="/tags/arguments/" style="font-size: 14.00px;">arguments</a><a href="/tags/array/" style="font-size: 10.00px;">array</a><a href="/tags/base/" style="font-size: 12.00px;">base</a><a href="/tags/closure/" style="font-size: 12.00px;">closure</a><a href="/tags/exec/" style="font-size: 12.00px;">exec</a><a href="/tags/function/" style="font-size: 14.00px;">function</a><a href="/tags/javascript/" style="font-size: 10.00px;">javascript</a><a href="/tags/node-js/" style="font-size: 12.00px;">node.js</a><a href="/tags/privateVariable/" style="font-size: 12.00px;">privateVariable</a><a href="/tags/senior/" style="font-size: 16.00px;">senior</a><a href="/tags/splice/" style="font-size: 12.00px;">splice</a><a href="/tags/valueOf/" style="font-size: 10.00px;">valueOf</a><a href="/tags/variable/" style="font-size: 12.00px;">variable</a><a href="/tags/开始/" style="font-size: 12.00px;">开始</a><a href="/tags/我/" style="font-size: 10.00px;">我</a><a href="/tags/日记/" style="font-size: 10.00px;">日记</a><a href="/tags/面向对象/" style="font-size: 14.00px;">面向对象</a>
     </div>
   </div>
 
@@ -549,7 +559,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">May 2014</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">May 2014</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -559,6 +569,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2014/12/04/js-base-testType/">js-base-testType</a>
+          </li>
         
           <li>
             <a href="/2014/12/02/js-senior-curry/">js-senior-curry</a>
@@ -574,10 +588,6 @@
         
           <li>
             <a href="/2014/12/01/js-privateVariable/">js-privateVariable</a>
-          </li>
-        
-          <li>
-            <a href="/2014/12/01/js-closure/">js-closure</a>
           </li>
         
       </ul>
