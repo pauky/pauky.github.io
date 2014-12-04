@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: node.js | OpenBlog</title>
+  <title>Tag: Ruby | OpenBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="开源blog">
 <meta property="og:type" content="website">
 <meta property="og:title" content="OpenBlog">
-<meta property="og:url" content="http://glowrypauky.xyz/tags/node-js/">
+<meta property="og:url" content="http://glowrypauky.xyz/tags/Ruby/">
 <meta property="og:site_name" content="OpenBlog">
 <meta property="og:description" content="开源blog">
 <meta name="twitter:card" content="summary">
@@ -185,19 +185,19 @@
 </nav>
       
   
-    <article id="post-second" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-rb-def" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2014/11/22/second/" class="article-date">
-  	<time datetime="2014-11-22T14:37:46.000Z" itemprop="datePublished">11月 22 2014</time>
+      <a href="/2014/12/04/rb-def/" class="article-date">
+  	<time datetime="2014-12-04T15:17:04.000Z" itemprop="datePublished">12月 4 2014</time>
 </a>
       
   <div class="article-category">
-    <a class="article-category-link" href="/categories/测试/">测试</a>
+    <a class="article-category-link" href="/categories/Ruby/">Ruby</a>
   </div>
 
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ruby/">Ruby</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/def/">def</a></li></ul>
 
     </div>
   
@@ -210,7 +210,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2014/11/22/second/">second</a>
+      <a class="article-title" href="/2014/12/04/rb-def/">rb-def</a>
     </h1>
   
 
@@ -218,7 +218,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'Hello World!'</span>);</div><div class="line">})();</div></pre></td></tr></table></figure>
+        <h1 id="Ruby函数与空白符">Ruby函数与空白符</h1>
+<h2 id="函数的调用可以省略括号，但也会有一些风险">函数的调用可以省略括号，但也会有一些风险</h2>
+<figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> </span>ff(a)</div><div class="line">    a * <span class="number">2</span></div><div class="line"><span class="keyword">end</span></div><div class="line">puts ff(<span class="number">1</span> + <span class="number">2</span>) +<span class="number">1</span> <span class="comment"># =&gt; 7</span></div><div class="line">puts ff (<span class="number">1</span> + <span class="number">2</span>) + <span class="number">1</span> <span class="comment"># =&gt; 8 相当于ff((1+2)+1) 因为ruby可以省略函数调用时的括号</span></div></pre></td></tr></table></figure>
+
+<h2 id="所以不要在调用时在函数名与参数间留空白，当第一个参数有括号时，最好加上括号，像这样：">所以不要在调用时在函数名与参数间留空白，当第一个参数有括号时，最好加上括号，像这样：</h2>
+<figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ff((<span class="number">1</span> + <span class="number">2</span>) +<span class="number">1</span>)</div></pre></td></tr></table></figure>
 
 
       

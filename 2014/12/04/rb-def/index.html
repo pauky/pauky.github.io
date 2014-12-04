@@ -3,20 +3,32 @@
 <head>
   <meta charset="utf-8">
   
-  <title>js-array-splice | OpenBlog</title>
+  <title>rb-def | OpenBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="主要演示功能较强大的splice，其中还涉及到concat,slice
-123456789101112131415161718192021222324252627(function () {    var arr = [1, 2, 3];    // 合并数组    console.log(arr.concat([4, 5, 6])); //[1, 2, 3, 4, 5, 6]    // sli">
+  <meta name="description" content="Ruby函数与空白符
+函数的调用可以省略括号，但也会有一些风险
+12345def ff(a)    a * 2endputs ff(1 + 2) +1 # =&gt; 7puts ff (1 + 2) + 1 # =&gt; 8 相当于ff((1+2)+1) 因为ruby可以省略函数调用时的括号
+
+所以不要在调用时在函数名与参数间留空白，当第一个参数有括号时，最好加上括号，像这样：
+1ff((1">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js-array-splice">
-<meta property="og:url" content="http://glowrypauky.xyz/2014/11/24/js-array-splice/">
+<meta property="og:title" content="rb-def">
+<meta property="og:url" content="http://glowrypauky.xyz/2014/12/04/rb-def/">
 <meta property="og:site_name" content="OpenBlog">
-<meta property="og:description" content="主要演示功能较强大的splice，其中还涉及到concat,slice
-123456789101112131415161718192021222324252627(function () {    var arr = [1, 2, 3];    // 合并数组    console.log(arr.concat([4, 5, 6])); //[1, 2, 3, 4, 5, 6]    // sli">
+<meta property="og:description" content="Ruby函数与空白符
+函数的调用可以省略括号，但也会有一些风险
+12345def ff(a)    a * 2endputs ff(1 + 2) +1 # =&gt; 7puts ff (1 + 2) + 1 # =&gt; 8 相当于ff((1+2)+1) 因为ruby可以省略函数调用时的括号
+
+所以不要在调用时在函数名与参数间留空白，当第一个参数有括号时，最好加上括号，像这样：
+1ff((1">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js-array-splice">
-<meta name="twitter:description" content="主要演示功能较强大的splice，其中还涉及到concat,slice
-123456789101112131415161718192021222324252627(function () {    var arr = [1, 2, 3];    // 合并数组    console.log(arr.concat([4, 5, 6])); //[1, 2, 3, 4, 5, 6]    // sli">
+<meta name="twitter:title" content="rb-def">
+<meta name="twitter:description" content="Ruby函数与空白符
+函数的调用可以省略括号，但也会有一些风险
+12345def ff(a)    a * 2endputs ff(1 + 2) +1 # =&gt; 7puts ff (1 + 2) + 1 # =&gt; 8 相当于ff((1+2)+1) 因为ruby可以省略函数调用时的括号
+
+所以不要在调用时在函数名与参数间留空白，当第一个参数有括号时，最好加上括号，像这样：
+1ff((1">
 
   
     <link rel="alternative" href="/atom.xml" title="OpenBlog" type="application/atom+xml">
@@ -186,19 +198,19 @@
 		</header>				
 	</div>
 </nav>
-      <article id="post-js-array-splice" class="article article-type-post" itemscope itemprop="blogPost">
+      <article id="post-rb-def" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2014/11/24/js-array-splice/" class="article-date">
-  	<time datetime="2014-11-24T14:19:01.000Z" itemprop="datePublished">11月 24 2014</time>
+      <a href="/2014/12/04/rb-def/" class="article-date">
+  	<time datetime="2014-12-04T15:17:04.000Z" itemprop="datePublished">12月 4 2014</time>
 </a>
       
   <div class="article-category">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+    <a class="article-category-link" href="/categories/Ruby/">Ruby</a>
   </div>
 
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Array/">Array</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/splice/">splice</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ruby/">Ruby</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/def/">def</a></li></ul>
 
     </div>
   
@@ -211,7 +223,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      js-array-splice
+      rb-def
     </h1>
   
 
@@ -219,8 +231,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="主要演示功能较强大的splice，其中还涉及到concat,slice">主要演示功能较强大的splice，其中还涉及到concat,slice</h3>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">    <span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line">    <span class="comment">// 合并数组</span></div><div class="line">    <span class="built_in">console</span>.log(arr.concat([<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>])); <span class="comment">//[1, 2, 3, 4, 5, 6]</span></div><div class="line"></div><div class="line">    <span class="comment">// slice(start, end)</span></div><div class="line">    <span class="comment">// 如果start为负数，则需加上arr的length</span></div><div class="line">    <span class="comment">// 只是返回子集，不修改原数组</span></div><div class="line">    <span class="comment">// 如果负数加上arr的length还是负数，则从0开始</span></div><div class="line">    <span class="built_in">console</span>.log(arr.slice(<span class="number">0</span>, <span class="number">3</span>)); <span class="comment">//[1, 2, 3]</span></div><div class="line">    <span class="built_in">console</span>.log(arr.slice(-<span class="number">2</span>, <span class="number">3</span>)); <span class="comment">//[2, 3]</span></div><div class="line">    <span class="built_in">console</span>.log(arr); <span class="comment">//[1, 2, 3]</span></div><div class="line">    <span class="built_in">console</span>.log(arr.slice(-<span class="number">3</span>, <span class="number">3</span>)); <span class="comment">//[1, 2, 3]</span></div><div class="line"></div><div class="line">    <span class="comment">// splice 会修改原数组</span></div><div class="line">    <span class="comment">// 第一个参数表示从元素第0个元素开始，第二个参数表示删除元素的个数为2</span></div><div class="line">    <span class="built_in">console</span>.log(arr.splice(<span class="number">0</span>, <span class="number">2</span>)); <span class="comment">//[1, 2] 返回被删除的数组子集</span></div><div class="line">    <span class="built_in">console</span>.log(arr); <span class="comment">//[3]</span></div><div class="line"></div><div class="line">    <span class="comment">// 第一个参数表示从数组的第0个元素开始，第二个参数表示要删除的元素个数，其它参数</span></div><div class="line">    <span class="comment">// 从第一个参数位置（即0）开始直接插入数组中</span></div><div class="line">    <span class="built_in">console</span>.log(arr.splice(<span class="number">0</span>, <span class="number">0</span>, <span class="number">7</span>, <span class="number">8</span>)); <span class="comment">//[] 没有元素被删除则返回空数组</span></div><div class="line">    <span class="built_in">console</span>.log(arr); <span class="comment">//[7, 8, 3]</span></div><div class="line">    <span class="built_in">console</span>.log(arr.splice(<span class="number">1</span>, <span class="number">2</span>, <span class="number">9</span>, <span class="number">10</span>)); <span class="comment">//[8, 3]</span></div><div class="line">    <span class="built_in">console</span>.log(arr); <span class="comment">// [7, 9, 10]</span></div><div class="line">})();</div></pre></td></tr></table></figure>
+        <h1 id="Ruby函数与空白符">Ruby函数与空白符</h1>
+<h2 id="函数的调用可以省略括号，但也会有一些风险">函数的调用可以省略括号，但也会有一些风险</h2>
+<figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> </span>ff(a)</div><div class="line">    a * <span class="number">2</span></div><div class="line"><span class="keyword">end</span></div><div class="line">puts ff(<span class="number">1</span> + <span class="number">2</span>) +<span class="number">1</span> <span class="comment"># =&gt; 7</span></div><div class="line">puts ff (<span class="number">1</span> + <span class="number">2</span>) + <span class="number">1</span> <span class="comment"># =&gt; 8 相当于ff((1+2)+1) 因为ruby可以省略函数调用时的括号</span></div></pre></td></tr></table></figure>
+
+<h2 id="所以不要在调用时在函数名与参数间留空白，当第一个参数有括号时，最好加上括号，像这样：">所以不要在调用时在函数名与参数间留空白，当第一个参数有括号时，最好加上括号，像这样：</h2>
+<figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ff((<span class="number">1</span> + <span class="number">2</span>) +<span class="number">1</span>)</div></pre></td></tr></table></figure>
 
 
       
@@ -234,18 +250,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2014/11/24/js-regexp-exec/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">&lt;</strong>
-      <div class="article-nav-title">
-        
-          js-regexp-exec
-        
-      </div>
-    </a>
   
-  
-    <a href="/2014/11/24/js-array-sort/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">js-array-sort</div>
+    <a href="/2014/12/04/js-base-testType/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">js-base-testType</div>
       <strong class="article-nav-caption">&gt;</strong>
     </a>
   
@@ -274,7 +281,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="js-array-splice" data-title="js-array-splice" data-url="http://glowrypauky.xyz/2014/11/24/js-array-splice/"></div>
+	<div class="ds-thread" data-thread-key="rb-def" data-title="rb-def" data-url="http://glowrypauky.xyz/2014/12/04/rb-def/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
