@@ -3,17 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>js-closure | OpenBlog</title>
+  <title>rb-operator-parallel | OpenBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="12345678910(function () {    function f() {        var name = 'glowry';        return function () {            console.log(name);        }    }    var copyf = f();    copyf = null; // 使用后消除对匿名函数的引用，就会">
+  <meta name="description" content="通过并行赋值来交换变量的值
+12345a = 1c = 2a, c = c, a # 交换赋值puts a      # =&gt; 2puts c      # =&gt; 1">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js-closure">
-<meta property="og:url" content="http://glowrypauky.xyz/2014/12/01/js-closure/">
+<meta property="og:title" content="rb-operator-parallel">
+<meta property="og:url" content="http://glowrypauky.xyz/2014/12/07/rb-operator-parallel/">
 <meta property="og:site_name" content="OpenBlog">
-<meta property="og:description" content="12345678910(function () {    function f() {        var name = 'glowry';        return function () {            console.log(name);        }    }    var copyf = f();    copyf = null; // 使用后消除对匿名函数的引用，就会">
+<meta property="og:description" content="通过并行赋值来交换变量的值
+12345a = 1c = 2a, c = c, a # 交换赋值puts a      # =&gt; 2puts c      # =&gt; 1">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js-closure">
-<meta name="twitter:description" content="12345678910(function () {    function f() {        var name = 'glowry';        return function () {            console.log(name);        }    }    var copyf = f();    copyf = null; // 使用后消除对匿名函数的引用，就会">
+<meta name="twitter:title" content="rb-operator-parallel">
+<meta name="twitter:description" content="通过并行赋值来交换变量的值
+12345a = 1c = 2a, c = c, a # 交换赋值puts a      # =&gt; 2puts c      # =&gt; 1">
 
   
     <link rel="alternative" href="/atom.xml" title="OpenBlog" type="application/atom+xml">
@@ -183,19 +186,19 @@
 		</header>				
 	</div>
 </nav>
-      <article id="post-js-closure" class="article article-type-post" itemscope itemprop="blogPost">
+      <article id="post-rb-operator-parallel" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2014/12/01/js-closure/" class="article-date">
-  	<time datetime="2014-12-01T07:50:59.000Z" itemprop="datePublished">12月 1 2014</time>
+      <a href="/2014/12/07/rb-operator-parallel/" class="article-date">
+  	<time datetime="2014-12-07T02:51:48.000Z" itemprop="datePublished">12月 7 2014</time>
 </a>
       
   <div class="article-category">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+    <a class="article-category-link" href="/categories/Ruby/">Ruby</a>
   </div>
 
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/closure/">closure</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ruby/">Ruby</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/operator/">operator</a></li></ul>
 
     </div>
   
@@ -208,7 +211,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      js-closure
+      rb-operator-parallel
     </h1>
   
 
@@ -216,7 +219,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">f</span><span class="params">()</span> </span>{</div><div class="line">        <span class="keyword">var</span> name = <span class="string">'glowry'</span>;</div><div class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">            <span class="built_in">console</span>.log(name);</div><div class="line">        }</div><div class="line">    }</div><div class="line">    <span class="keyword">var</span> copyf = f();</div><div class="line">    copyf = <span class="literal">null</span>; <span class="comment">// 使用后消除对匿名函数的引用，就会让垃圾回收器回收该闭包</span></div><div class="line">})();</div></pre></td></tr></table></figure>
+        <h1 id="通过并行赋值来交换变量的值">通过并行赋值来交换变量的值</h1>
+<figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">a = <span class="number">1</span></div><div class="line">c = <span class="number">2</span></div><div class="line">a, c = c, a <span class="comment"># 交换赋值</span></div><div class="line">puts a      <span class="comment"># =&gt; 2</span></div><div class="line">puts c      <span class="comment"># =&gt; 1</span></div></pre></td></tr></table></figure>
 
 
       
@@ -230,18 +234,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2014/12/01/js-privateVariable/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">&lt;</strong>
-      <div class="article-nav-title">
-        
-          js-privateVariable
-        
-      </div>
-    </a>
   
-  
-    <a href="/2014/12/01/js-variable/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">js-varible</div>
+    <a href="/2014/12/04/rb-def/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">rb-def</div>
       <strong class="article-nav-caption">&gt;</strong>
     </a>
   
@@ -270,7 +265,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="js-closure" data-title="js-closure" data-url="http://glowrypauky.xyz/2014/12/01/js-closure/"></div>
+	<div class="ds-thread" data-thread-key="rb-operator-parallel" data-title="rb-operator-parallel" data-url="http://glowrypauky.xyz/2014/12/07/rb-operator-parallel/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

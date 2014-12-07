@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>js-closure | OpenBlog</title>
+  <title>Tag: operator | OpenBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="12345678910(function () {    function f() {        var name = 'glowry';        return function () {            console.log(name);        }    }    var copyf = f();    copyf = null; // 使用后消除对匿名函数的引用，就会">
-<meta property="og:type" content="article">
-<meta property="og:title" content="js-closure">
-<meta property="og:url" content="http://glowrypauky.xyz/2014/12/01/js-closure/">
+  <meta name="description" content="开源blog">
+<meta property="og:type" content="website">
+<meta property="og:title" content="OpenBlog">
+<meta property="og:url" content="http://glowrypauky.xyz/tags/operator/">
 <meta property="og:site_name" content="OpenBlog">
-<meta property="og:description" content="12345678910(function () {    function f() {        var name = 'glowry';        return function () {            console.log(name);        }    }    var copyf = f();    copyf = null; // 使用后消除对匿名函数的引用，就会">
+<meta property="og:description" content="开源blog">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js-closure">
-<meta name="twitter:description" content="12345678910(function () {    function f() {        var name = 'glowry';        return function () {            console.log(name);        }    }    var copyf = f();    copyf = null; // 使用后消除对匿名函数的引用，就会">
+<meta name="twitter:title" content="OpenBlog">
+<meta name="twitter:description" content="开源blog">
 
   
     <link rel="alternative" href="/atom.xml" title="OpenBlog" type="application/atom+xml">
@@ -183,19 +183,21 @@
 		</header>				
 	</div>
 </nav>
-      <article id="post-js-closure" class="article article-type-post" itemscope itemprop="blogPost">
+      
+  
+    <article id="post-rb-operator-parallel" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2014/12/01/js-closure/" class="article-date">
-  	<time datetime="2014-12-01T07:50:59.000Z" itemprop="datePublished">12月 1 2014</time>
+      <a href="/2014/12/07/rb-operator-parallel/" class="article-date">
+  	<time datetime="2014-12-07T02:51:48.000Z" itemprop="datePublished">12月 7 2014</time>
 </a>
       
   <div class="article-category">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+    <a class="article-category-link" href="/categories/Ruby/">Ruby</a>
   </div>
 
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/closure/">closure</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ruby/">Ruby</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/operator/">operator</a></li></ul>
 
     </div>
   
@@ -207,8 +209,8 @@
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      js-closure
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/12/07/rb-operator-parallel/">rb-operator-parallel</a>
     </h1>
   
 
@@ -216,7 +218,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">f</span><span class="params">()</span> </span>{</div><div class="line">        <span class="keyword">var</span> name = <span class="string">'glowry'</span>;</div><div class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">            <span class="built_in">console</span>.log(name);</div><div class="line">        }</div><div class="line">    }</div><div class="line">    <span class="keyword">var</span> copyf = f();</div><div class="line">    copyf = <span class="literal">null</span>; <span class="comment">// 使用后消除对匿名函数的引用，就会让垃圾回收器回收该闭包</span></div><div class="line">})();</div></pre></td></tr></table></figure>
+        <h1 id="通过并行赋值来交换变量的值">通过并行赋值来交换变量的值</h1>
+<figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">a = <span class="number">1</span></div><div class="line">c = <span class="number">2</span></div><div class="line">a, c = c, a <span class="comment"># 交换赋值</span></div><div class="line">puts a      <span class="comment"># =&gt; 2</span></div><div class="line">puts c      <span class="comment"># =&gt; 1</span></div></pre></td></tr></table></figure>
 
 
       
@@ -227,68 +230,15 @@
     </footer>
   </div>
   
-    
-<nav id="article-nav">
-  
-    <a href="/2014/12/01/js-privateVariable/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">&lt;</strong>
-      <div class="article-nav-title">
-        
-          js-privateVariable
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2014/12/01/js-variable/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">js-varible</div>
-      <strong class="article-nav-caption">&gt;</strong>
-    </a>
-  
-</nav>
-
-  
 </article>
 
 
-<div class="share">
-	<!-- JiaThis Button BEGIN -->
-	<div class="jiathis_style">
-		<span class="jiathis_txt">分享到：</span>
-		<a class="jiathis_button_tsina"></a>
-		<a class="jiathis_button_cqq"></a>
-		<a class="jiathis_button_douban"></a>
-		<a class="jiathis_button_weixin"></a>
-		<a class="jiathis_button_tumblr"></a>
-		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
-	</div>
-	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
-	<!-- JiaThis Button END -->
-</div>
 
 
 
-<div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="js-closure" data-title="js-closure" data-url="http://glowrypauky.xyz/2014/12/01/js-closure/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"true"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
 
-
-
+  
+  
 
       <footer id="footer">
   <div class="outer">
