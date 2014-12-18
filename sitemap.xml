@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://glowrypauky.xyz/2014/12/18/js-jquery-deferred/</loc>
+    <lastmod>2014-12-18T04:59:19.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://glowrypauky.xyz/2014/12/07/rb-operator-parallel/</loc>
     <lastmod>2014-12-07T02:53:46.000Z</lastmod>
   </url>
