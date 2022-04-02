@@ -1,0 +1,53 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="浅析memcached数据存储内存分配"><meta name="keywords" content="memcached"><meta name="author" content="杨润炜"><meta name="copyright" content="杨润炜"><title>memcached内存结构浅析 | Cwalker</title><link rel="shortcut icon" href="/melody-favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.9.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.9.0"><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  hexoVersion: '6.1.0'
+} </script><meta name="generator" content="Hexo 6.1.0"></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="Toggle article">Toggle site</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#stats"><span class="toc-number">1.</span> <span class="toc-text">stats</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E8%80%83"><span class="toc-number">2.</span> <span class="toc-text">参考</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/img/avatar.png"></div><div class="author-info__name text-center">杨润炜</div><div class="author-info__description text-center"></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">Articles</span><span class="pull-right">129</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">Tags</span><span class="pull-right">29</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">Categories</span><span class="pull-right">2</span></a></div></div></div><div id="content-outer"><div class="plain" id="top-container"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">Cwalker</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right"></span></div></div><div class="layout" id="content-inner"><article id="post"><div class="plain" id="post-title">memcached内存结构浅析</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2017-03-04</time><span class="post-meta__separator">|</span><i class="fa fa-inbox" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/tech/"> tech</a><span class="post-meta__separator">|</span><i class="fa fa-comment-o" aria-hidden="true"></i><a href="/a/81.html#disqus_thread"><span class="disqus-comment-count" data-disqus-identifier="a/81.html"></span></a></div><div class="article-container" id="post-content"><p>memcached作为缓存服务器，被广泛使用。而数据到底是如何存储在memcached的呢？下图有一个较全面的说明。<br><img src="https://img.yangrunwei.com/article-img/20170304/a18cc5f2-b855-4563-860f-3b293a04983e--m.jpg" alt="memcached内存分配" title="memcached内存分配"></p>
+<p>接下来我就对memcached的使用经验和从网上学习来的知识进行下总结，也能大概说明上图内容。<br>##mem的内存分配原理<br>mem的内存分配原理包含三种结构：page, slab, chunk。<br>page是mem申请内存的最小单位，默认是1M，在启动时根据-I参数来设置，所以mem默认不支持存储超过1M的内容；<br>每个page会等分若干个chunk，每个chunk存一个key的内容；<br>相同的chunk组成一个slab。<br>至此对mem的内存分配原理应该有些了解了。<br>##监控mem<br>接下来介绍一下如何监控mem。</p>
+<h3 id="stats"><a href="#stats" class="headerlink" title="stats"></a>stats</h3><p>平时可以利用telnet连接到mem，然后运行stats来获取到一些基本运行状态，比如存储键值量，命中量，get次数及set次数等。具体如下：</p>
+<ol>
+<li>pid: memcached服务进程的进程ID</li>
+<li>uptime: memcached服务从启动到当前所经过的时间，单位是秒。</li>
+<li>time: memcached服务器所在主机当前系统的时间，单位是秒。</li>
+<li>version: memcached组件的版本。这里是我当前使用的1.2.6。</li>
+<li>pointer_size：服务器所在主机操作系统的指针大小，一般为32或64.</li>
+<li>curr_items：表示当前缓存中存放的所有缓存对象的数量。不包括目前已经从缓存中删除的对象。</li>
+<li>total_items：表示从memcached服务启动到当前时间，系统存储过的所有对象的数量，包括目前已经从缓存中删除的对象。</li>
+<li>bytes：表示系统存储缓存对象所使用的存储空间，单位为字节。</li>
+<li>curr_connections：表示当前系统打开的连接数。</li>
+<li>total_connections：表示从memcached服务启动到当前时间，系统打开过的连接的总数。</li>
+<li>connection_structures：表示从memcached服务启动到当前时间，被服务器分配的连接结构的数量，这个解释是协议文档给的，具体什么意思，我目前还没搞明白。</li>
+<li>cmd_get：累积获取数据的数量，这里是3，因为我测试过3次，第一次因为没有序列化对象，所以获取数据失败，是null，后边有2次是我用不同对象测试了2次。</li>
+<li>cmd_set：累积保存数据的树立数量，这里是2.虽然我存储了3次，但是第一次因为没有序列化，所以没有保存到缓存，也就没有记录。</li>
+<li>get_hits：表示获取数据成功的次数。</li>
+<li>get_misses：表示获取数据失败的次数。</li>
+<li>evictions：为了给新的数据项目释放空间，从缓存移除的缓存对象的数目。比如超过缓存大小时根据LRU算法移除的对象，以及过期的对象。</li>
+<li>bytes_read：memcached服务器从网络读取的总的字节数。</li>
+<li>bytes_written：memcached服务器发送到网络的总的字节数。</li>
+<li>limit_maxbytes：memcached服务缓存允许使用的最大字节数。这里为67108864字节，也就是是64M.与我们启动memcached服务设置的大小一致。</li>
+<li>threads：被请求的工作线程的总数量</li>
+</ol>
+<p>###stats slabs<br>stats slabs可以用来查看slab情况，包括数量和其下chunk的使用情况，还可以查看到mem当前申请的总内存量。</p>
+<p>###memcache-top<br><a target="_blank" rel="noopener" href="https://code.google.com/archive/p/memcache-top/">memcache-top</a>是一个mem监控工具，可支持对多个mem运行时的各项指标进行监控，轻量方便。</p>
+<p>##evictions&gt;0<br>我们接下来谈谈使用时mem数据被踢除(即evictions&gt;0)的情况。<br>我们已经知道chunk是存储内容的最小单位，一个slab下的所有chunk大小都是一样的。当我们存储的内容大小各样时，mem必定会分配出许多slab，若考虑到极端情况，每个内容只放在一个slab里，那是十分浪费内存的，因为申请到的内存大部分空着。所以有时候我们会在监控(memcache-top)里看到，mem的USAGE很小，但却出现了evictions&gt;0，通过查看mem的内存申请量可以看到已经到达设定的最大分配内存。解决这种问题，无非是加大设定的内存量，或者是减小存入mem的内容大小类别，提高内存利用率。</p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a target="_blank" rel="noopener" href="http://san-yun.iteye.com/blog/1591803">memcached 内存分配(slab和chunk)</a><br><a target="_blank" rel="noopener" href="http://andto.iteye.com/blog/1560906">通过stats命令分析Memcached的内部状态</a></p>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">杨润炜</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://yangrunwei.com/a/81.html">https://yangrunwei.com/a/81.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/memcached/">memcached</a></div><nav id="pagination"><div class="prev-post pull-left"><a href="/a/82.html"><i class="fa fa-chevron-left">  </i><span>关于群体心理学的一些认识</span></a></div><div class="next-post pull-right"><a href="/a/80.html"><span>如何在linux创建及删除软链</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="disqus_thread"></div><script>var unused = null;
+var disqus_config = function () {
+  this.page.url = 'https://yangrunwei.com/a/81.html';
+  this.page.identifier = 'a/81.html';
+  this.page.title = 'memcached内存结构浅析';
+}
+var d = document, s = d.createElement('script');
+s.src = "https://" + 'cwalker-top' +".disqus.com/embed.js";
+s.setAttribute('data-timestamp', '' + +new Date());
+(d.head || d.body).appendChild(s);</script><script id="dsq-count-scr" src="https://cwalker-top.disqus.com/count.js" async></script></div></div><footer><div class="layout" id="footer"><div class="copyright">&copy;2015 - 2022 By 杨润炜</div><div class="framework-info"><span>Driven - </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme - </span><a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.9.0"></script><script src="/js/fancybox.js?version=1.9.0"></script><script src="/js/sidebar.js?version=1.9.0"></script><script src="/js/copy.js?version=1.9.0"></script><script src="/js/fireworks.js?version=1.9.0"></script><script src="/js/transition.js?version=1.9.0"></script><script src="/js/scroll.js?version=1.9.0"></script><script src="/js/head.js?version=1.9.0"></script><script>if(/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+  $('#top-container').addClass('is-mobile')
+}</script></body></html>
