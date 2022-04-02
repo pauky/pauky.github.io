@@ -2,6 +2,13 @@
 
 ## theme
 
+### init
 ```
-git submodule add -b master https://github.com/Molunerfinn/hexo-theme-melody themes/melody
+git clone -b master https://github.com/Molunerfinn/hexo-theme-melody themes/melody
+```
+
+### update
+```
+cd themes/melody
+git pull
 ```
