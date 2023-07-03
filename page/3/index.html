@@ -172,11 +172,9 @@
 <li>leetcode 136. 只出现一次的数字<blockquote>
 <p>给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。</p>
 </blockquote>
-<p>示例1：<br>输入: [2,2,1]<br>输出: 1</p>
-<blockquote>
+示例1：<br>输入: [2,2,1]<br>输出: 1<blockquote>
 </blockquote>
-<p>示例 2:<br>输入: [4,1,2,1,2]<br>输出: 4</p>
-</li>
+示例 2:<br>输入: [4,1,2,1,2]<br>输出: 4</li>
 </ul>
 <p>该题想让我们找出数组里的唯一元素，直觉上我们会使用哈希表，将重复的元素记录下来判断，但哈希表会占用额外的内存空间，如：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def singleNumber(self, nums: List[int]) -&gt; int:</span><br><span class="line">        h = defaultdict(int)</span><br><span class="line">        res = 0</span><br><span class="line">        for n in nums:</span><br><span class="line">            h[n] += 1</span><br><span class="line">            if h[n] &gt; 1:</span><br><span class="line">                res -= n</span><br><span class="line">            else:</span><br><span class="line">                res += n</span><br><span class="line">        return res</span><br></pre></td></tr></table></figure>

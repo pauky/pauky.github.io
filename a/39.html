@@ -15,11 +15,11 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">content = content.replace(/&lt;embed(.*?) src=&quot;http:\/\/static\.video\.qq\.com\/(.*?)\.swf(.*?)&quot;&gt;/gmi, &#x27;&lt;iframe frameborder=&quot;0&quot; width=&quot;100%&quot; height=&quot;200&quot; src=&quot;http://v.qq.com/iframe/player.html?$3&amp;tiny=0&quot; allowfullscreen&gt;&lt;/iframe&gt;&#x27;)</span><br></pre></td></tr></table></figure>
 <p>之所以能够将embed替换成iframe，是因为腾讯视频的swf源和iframe源基本只有根域名的差别，知道一个可以推导成另一个，如<br>swf源为：</p>
 <blockquote>
-<p><a target="_blank" rel="noopener" href="http://static.video.qq.com/TPout.swf?vid=x00193363qx&amp;auto=0">http://static.video.qq.com/TPout.swf?vid=x00193363qx&amp;auto=0</a></p>
+<p><a target="_blank" rel="noopener" href="http://static.video.qq.com/TPout.swf?vid=x00193363qx&auto=0">http://static.video.qq.com/TPout.swf?vid=x00193363qx&amp;auto=0</a></p>
 </blockquote>
 <p>那iframe源则为：</p>
 <blockquote>
-<p><a target="_blank" rel="noopener" href="http://v.qq.com/iframe/player.html?vid=x00193363qx&amp;tiny=0&amp;auto=0">http://v.qq.com/iframe/player.html?vid=x00193363qx&amp;tiny=0&amp;auto=0</a></p>
+<p><a target="_blank" rel="noopener" href="http://v.qq.com/iframe/player.html?vid=x00193363qx&tiny=0&auto=0">http://v.qq.com/iframe/player.html?vid=x00193363qx&amp;tiny=0&amp;auto=0</a></p>
 </blockquote>
 </div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">杨润炜</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://yangrunwei.com/a/39.html">https://yangrunwei.com/a/39.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/webFE/">webFE</a></div><nav id="pagination"><div class="prev-post pull-left"><a href="/a/40.html"><i class="fa fa-chevron-left">  </i><span>mongodb获取相邻数据</span></a></div><div class="next-post pull-right"><a href="/a/37.html"><span>谈谈自己平时使用的页面布局方法</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="disqus_thread"></div><script>var unused = null;
 var disqus_config = function () {
